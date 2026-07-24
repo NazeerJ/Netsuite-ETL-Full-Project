@@ -1,7 +1,7 @@
 /*==============================================================
   Customer
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_customer
+CREATE OR ALTER VIEW stg.customer
 AS
 SELECT
     customer_nsid,
@@ -10,14 +10,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_customer;
+FROM raw.customer;
 GO
 
 
 /*==============================================================
   Deleted Records
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_deleted_records
+CREATE OR ALTER VIEW stg.deleted_records
 AS
 SELECT
     transaction_nsid,
@@ -25,14 +25,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_deleted_records;
+FROM raw.deleted_records;
 GO
 
 
 /*==============================================================
   FX Average Rate
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_fx_avg_rate
+CREATE OR ALTER VIEW stg.fx_avg_rate
 AS
 SELECT
     UPPER(NULLIF(LTRIM(RTRIM(original_currency)), '')) AS original_currency,
@@ -42,14 +42,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_fx_avg_rate;
+FROM raw.fx_avg_rate;
 GO
 
 
 /*==============================================================
   Item
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_item
+CREATE OR ALTER VIEW stg.item
 AS
 SELECT
     item_nsid,
@@ -62,14 +62,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_item;
+FROM raw.item;
 GO
 
 
 /*==============================================================
   Item Category
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_item_category
+CREATE OR ALTER VIEW stg.item_category
 AS
 SELECT
     item_category_nsid,
@@ -78,14 +78,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_item_category;
+FROM raw.item_category;
 GO
 
 
 /*==============================================================
   Item Pattern
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_item_pattern
+CREATE OR ALTER VIEW stg.item_pattern
 AS
 SELECT
     item_pattern_nsid,
@@ -93,14 +93,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_item_pattern;
+FROM raw.item_pattern;
 GO
 
 
 /*==============================================================
   Sales Budget
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_sales_budget
+CREATE OR ALTER VIEW stg.sales_budget
 AS
 SELECT
     sales_budget_id,
@@ -114,14 +114,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_sales_budget;
+FROM raw.sales_budget;
 GO
 
 
 /*==============================================================
   Subsidiary / Business Unit
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_subsidiary
+CREATE OR ALTER VIEW stg.subsidiary
 AS
 SELECT
     bu_nsid,
@@ -133,14 +133,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_subsidiary;
+FROM raw.subsidiary;
 GO
 
 
 /*==============================================================
   Transaction
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_transaction
+CREATE OR ALTER VIEW stg.transactions
 AS
 SELECT
     transaction_nsid,
@@ -155,14 +155,14 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_transaction;
+FROM raw.transactions;
 GO
 
 
 /*==============================================================
   Transaction Line
 ==============================================================*/
-CREATE OR ALTER VIEW dbo.stg_transactionline
+CREATE OR ALTER VIEW stg.transactionline
 AS
 SELECT
     transaction_nsid,
@@ -176,5 +176,77 @@ SELECT
     pipeline_run_id,
     ingestion_timestamp,
     source_file_name
-FROM dbo.raw_transactionline;
+FROM raw.transactionline;
+GO
+
+CREATE OR ALTER VIEW stg.user_rls
+AS
+WITH LatestPipelineRun AS
+(
+    SELECT TOP (1)
+        pipeline_run_id
+    FROM raw.user_rls
+    WHERE pipeline_run_id IS NOT NULL
+    ORDER BY ingestion_timestamp DESC
+),
+NormalizedRules AS
+(
+    SELECT
+        LOWER(
+            NULLIF(
+                LTRIM(RTRIM(user_email)),
+                ''
+            )
+        ) AS user_email,
+
+        NULLIF(
+            LTRIM(RTRIM(authorized_bu_code)),
+            ''
+        ) AS authorized_bu_code,
+
+        NULLIF(
+            LTRIM(RTRIM(authorized_customer_name)),
+            ''
+        ) AS authorized_customer_name,
+
+        NULLIF(
+            LTRIM(RTRIM(authorized_item_type)),
+            ''
+        ) AS authorized_item_type,
+
+        pipeline_run_id,
+        ingestion_timestamp,
+        source_file_name,
+
+        ROW_NUMBER() OVER
+        (
+            PARTITION BY
+                LOWER(LTRIM(RTRIM(user_email))),
+                UPPER(LTRIM(RTRIM(authorized_bu_code))),
+                UPPER(LTRIM(RTRIM(authorized_customer_name))),
+                UPPER(LTRIM(RTRIM(authorized_item_type)))
+            ORDER BY ingestion_timestamp DESC
+        ) AS row_number
+
+    FROM raw.user_rls
+    WHERE pipeline_run_id =
+    (
+        SELECT pipeline_run_id
+        FROM LatestPipelineRun
+    )
+)
+SELECT
+    user_email,
+    authorized_bu_code,
+    authorized_customer_name,
+    authorized_item_type,
+    pipeline_run_id,
+    ingestion_timestamp,
+    source_file_name
+FROM NormalizedRules
+WHERE row_number = 1
+  AND user_email IS NOT NULL
+  AND authorized_bu_code IS NOT NULL
+  AND authorized_customer_name IS NOT NULL
+  AND authorized_item_type IS NOT NULL;
 GO

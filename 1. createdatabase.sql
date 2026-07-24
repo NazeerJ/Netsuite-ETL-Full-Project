@@ -1,0 +1,33 @@
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'NetSuiteDW')
+BEGIN
+    CREATE DATABASE NetSuiteDW;
+END
+
+USE NetSuiteDW;
+GO
+
+CREATE SCHEMA raw;
+GO
+
+CREATE SCHEMA stg;
+GO
+
+CREATE SCHEMA int;
+GO
+
+CREATE SCHEMA scd;
+GO
+
+CREATE SCHEMA audit;
+GO
+
+IF NOT EXISTS
+(
+    SELECT 1
+    FROM sys.schemas
+    WHERE name = 'dwh'
+)
+BEGIN
+    EXEC('CREATE SCHEMA dwh');
+END;
+GO

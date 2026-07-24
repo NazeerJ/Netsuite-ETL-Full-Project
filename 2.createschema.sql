@@ -1,4 +1,4 @@
-CREATE TABLE raw_customer (
+CREATE TABLE raw.customer (
     customer_nsid BIGINT,
     customer_name VARCHAR(255),
     customer_tier VARCHAR(100),
@@ -7,7 +7,7 @@ CREATE TABLE raw_customer (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_item_category (
+CREATE TABLE raw.item_category (
     item_category_nsid BIGINT,
     item_category VARCHAR(255),
     item_sub_category VARCHAR(255),
@@ -16,7 +16,7 @@ CREATE TABLE raw_item_category (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_item_pattern (
+CREATE TABLE raw.item_pattern (
     item_pattern_nsid BIGINT,
     item_pattern VARCHAR(255),
     pipeline_run_id UNIQUEIDENTIFIER,
@@ -24,7 +24,7 @@ CREATE TABLE raw_item_pattern (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_item (
+CREATE TABLE raw.item (
     item_nsid BIGINT,
     item_category_nsid BIGINT,
     item_pattern_nsid BIGINT,
@@ -37,7 +37,7 @@ CREATE TABLE raw_item (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_subsidiary (
+CREATE TABLE raw.subsidiary (
     bu_nsid BIGINT,
     bu_code VARCHAR(50),
     bu_currency VARCHAR(3),
@@ -49,7 +49,7 @@ CREATE TABLE raw_subsidiary (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_sales_budget (
+CREATE TABLE raw.sales_budget (
     sales_budget_id BIGINT IDENTITY(1,1),
     customer_name VARCHAR(255),
     bu_code VARCHAR(50),
@@ -63,7 +63,7 @@ CREATE TABLE raw_sales_budget (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE [raw_transaction] (
+CREATE TABLE raw.transactions (
     transaction_nsid BIGINT,
     bu_nsid BIGINT,
     customer_nsid BIGINT,
@@ -78,7 +78,7 @@ CREATE TABLE [raw_transaction] (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_transactionline (
+CREATE TABLE raw.transactionline (
     transaction_nsid BIGINT,
     item_nsid BIGINT,
     transaction_line_nsid BIGINT,
@@ -92,7 +92,7 @@ CREATE TABLE raw_transactionline (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_fx_avg_rate (
+CREATE TABLE raw.fx_avg_rate (
     original_currency VARCHAR(3),
     target_currency VARCHAR(3),
     rate_date DATE,
@@ -102,7 +102,7 @@ CREATE TABLE raw_fx_avg_rate (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_deleted_records (
+CREATE TABLE raw.deleted_records (
     transaction_nsid BIGINT,
     deleted_date DATE,
     pipeline_run_id UNIQUEIDENTIFIER,
@@ -110,7 +110,7 @@ CREATE TABLE raw_deleted_records (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE raw_user_rls (
+CREATE TABLE raw.user_rls (
     user_email VARCHAR(255),
     authorized_bu_code VARCHAR(500),
     authorized_customer_name VARCHAR(255),
@@ -120,7 +120,7 @@ CREATE TABLE raw_user_rls (
     source_file_name VARCHAR(255)
 );
 
-CREATE TABLE audit_pipeline_run
+CREATE TABLE audit.pipeline_run
 (
     pipeline_run_id UNIQUEIDENTIFIER PRIMARY KEY,
     pipeline_name VARCHAR(100) NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE audit_pipeline_run
     error_message VARCHAR(MAX) NULL
 );
 
-CREATE TABLE audit_table_load
+CREATE TABLE audit.table_load
 (
     table_load_id BIGINT IDENTITY(1,1) PRIMARY KEY,
     pipeline_run_id UNIQUEIDENTIFIER NOT NULL,

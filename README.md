@@ -911,7 +911,13 @@ The final design provides:
 
 # Power BI report end result
 
-The ETL and reporting layers support a Power BI solution containing a report landing page and a sales performance overview. The screenshots below show the completed report design produced from the reporting-ready business views.
+The ETL and reporting layers support a Power BI solution containing a report landing page and a sales performance overview. The screenshots below show the design process and completed report produced from the reporting-ready business views.
+
+## Power BI report skeleton
+
+The initial report skeleton was designed in **Figma** and exported as a background image for Power BI. It established the page structure, navigation area, filter positions, KPI containers and visual layout before the Power BI visuals were added.
+
+![Power BI report skeleton created in Figma](img/Power%20BI%20Report%20Skeleton.png)
 
 ## Report home page
 

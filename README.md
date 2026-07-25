@@ -13,7 +13,7 @@ Review the project documentation before beginning development. The recommended o
    [`Netsuite_Project_Data_Documentation.html`](Netsuite_Project_Data_Documentation.html) provides the initial understanding of the source data, table structures, fields, relationships and dependencies. This should be reviewed before the project starts so the data model and source limitations are understood before ETL and report development begins.
 
 2. **Word report specification — review after the data documentation**  
-   [`Sales_Performance_Pipeline_Report_Specification.docx`](Sales_Performance_Pipeline_Report_Specification(1).docx) defines the report scope, business requirements, core measures, reporting logic, semantic model, page layouts, filters and expected controls.
+   [`Sales_Performance_Pipeline_Report_Specification.docx`](Sales_Performance_Pipeline_Report_Specification.docx) defines the report scope, business requirements, core measures, reporting logic, semantic model, page layouts, filters and expected controls.
 
 The HTML file explains **what data is available and how it relates**. The Word specification explains **what the final reporting solution must deliver**.
 

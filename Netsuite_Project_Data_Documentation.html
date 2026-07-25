@@ -2091,7 +2091,7 @@ body {
 /* ── Layout ────────────────────────────────────────────────────── */
 .page-wrapper {
     display: flex;
-    min-height: 100vh;
+    min-height: auto;
 }
 
 .dax-explanation {
@@ -2115,7 +2115,7 @@ body {
     top: 0;
     left: 0;
     width: var(--sidebar-width);
-    height: 100vh;
+    height: auto;
     overflow-y: auto;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--border);
@@ -2301,7 +2301,7 @@ pre:hover .copy-btn { opacity: 1; }
 .alert-caution { background: var(--caution-bg); border-color: var(--caution-border); color: var(--caution-fg); }
 
 /* SVG Wireframe CSS */
-.page-wf { max-width:800px; display:block; margin:20px 0; border:1px solid var(--border); border-radius:8px; background:var(--code-bg); overflow:hidden; }
+.page-wf { max-width:800px; display:block; margin:20px 0; border:1px solid var(--border); border-radius:8px; background:var(--code-bg); overflow: visible; }
 .wf-container { position:relative; width:100%; padding-top:56.25%; /* 16:9 aspect ratio */ }
 .wf-svg { position:absolute; top:0; left:0; width:100%; height:100%; }
 .wf-canvas { fill: var(--bg); stroke: var(--border); stroke-width:2; }
@@ -2321,6 +2321,8 @@ pre:hover .copy-btn { opacity: 1; }
   .layer-controls label { cursor: pointer; display: flex; align-items: center; gap: 5px; user-select: none; }
   .hidden-layer { opacity: 0 !important; pointer-events: none !important; transition: opacity 0.2s ease-in-out; }
 
+
+html, body {height:auto !important; min-height:100%; overflow-y:auto !important; overflow-x:hidden;}
 </style>
 <script>
 
@@ -2346,13 +2348,13 @@ pre:hover .copy-btn { opacity: 1; }
         
         <ul class="toc">
 <li><a href="#sec1">1. Data Sources</a><ul><li><a href="#sec1-1">1.1 File</a></li><li><a href="#sec1-2">1.2 Database</a></li><li><a href="#sec1-3">1.3 Other</a></li><li><a href="#sec1-4">1.4 Computed Tables</a></li></ul></li>
-<li><a href="#sec2">2. Power Query Transformations</a><ul><li><a href="#sec2-tbl-DT_Last_Modified">2.1 DT-Last Modified</a></li><li><a href="#sec2-tbl-Calculated_Measures">2.2 Calculated Measures</a></li><li><a href="#sec2-tbl-sales_vs_budget_monthly">2.3 sales_vs_budget_monthly</a></li><li><a href="#sec2-tbl-sales_pipeline">2.4 sales_pipeline</a></li><li><a href="#sec2-tbl-Calendar">2.5 Calendar</a></li><li><a href="#sec2-tbl-Dim_Business_Unit">2.6 Dim Business Unit</a></li><li><a href="#sec2-tbl-Dim_Customer">2.7 Dim Customer</a></li><li><a href="#sec2-tbl-Sales_Composition">2.8 Sales Composition</a></li></ul></li>
+<li><a href="#sec2">2. Power Query Transformations</a><ul><li><a href="#sec2-tbl-Calculated_Measures">2.1 Calculated Measures</a></li><li><a href="#sec2-tbl-DT_Last_Modified">2.2 DT-Last Modified</a></li><li><a href="#sec2-tbl-sales_pipeline">2.3 sales_pipeline</a></li><li><a href="#sec2-tbl-sales_vs_budget_monthly">2.4 sales_vs_budget_monthly</a></li><li><a href="#sec2-tbl-Calendar">2.5 Calendar</a></li><li><a href="#sec2-tbl-Dim_Business_Unit">2.6 Dim Business Unit</a></li><li><a href="#sec2-tbl-Dim_Customer">2.7 Dim Customer</a></li><li><a href="#sec2-tbl-Sales_Composition">2.8 Sales Composition</a></li></ul></li>
 <li><a href="#sec3">3. Relationships</a></li>
 <li><a href="#sec4">4. DAX Measures</a><ul><li><a href="#sec4-1">4.1 Calculated Measures</a></li><li><a href="#sec4-2">4.2 Sales Composition</a></li></ul></li>
 <li><a href="#sec5">5. DAX Calculated Columns</a><ul><li><a href="#sec5-1">5.1 Calendar</a></li></ul></li>
 <li><a href="#sec6">6. Observations</a></li>
 <li><a href="#sec7">7. Measure Lineage</a></li>
-<li><a href="#sec-pages">8. Report Pages</a><ul><li><a href="#sec-page-1">8.1 Home</a></li><li><a href="#sec-page-2">8.2 Glossary</a></li><li><a href="#sec-page-3">8.3 Overview</a></li><li><a href="#sec-page-4">8.4 Sales Orders</a></li><li><a href="#sec-page-5">8.5 Opportunities</a></li><li><a href="#sec-page-6">8.6 Reports</a></li></ul></li>
+<li><a href="#sec-pages">8. Report Pages</a><ul><li><a href="#sec-page-1">8.1 Opportunities</a></li><li><a href="#sec-page-2">8.2 Home</a></li><li><a href="#sec-page-3">8.3 Reports</a></li><li><a href="#sec-page-4">8.4 Glossary</a></li><li><a href="#sec-page-5">8.5 Overview</a></li><li><a href="#sec-page-6">8.6 Sales Orders</a></li></ul></li>
         </ul>
     </nav>
 
@@ -2360,13 +2362,13 @@ pre:hover .copy-btn { opacity: 1; }
     <main class="content">
         <h1>Netsuite Project</h1>
 <p style="font-size: 12px; color: var(--fg-muted); margin-bottom: 24px;">
-    <strong>Source:</strong> Netsuite Project.pbix | 
-    <strong>Generated:</strong> 2026-07-25T16:26:22Z | 
-    <strong>Model Hash:</strong> 72392ed5
+    <strong>Source:</strong> Netsuite Project.pbip | 
+    <strong>Generated:</strong> 2026-07-25T18:20:08Z | 
+    <strong>Model Hash:</strong> e6405c96
 </p>
 <div class="alert alert-note" style="margin-bottom: 24px;">
     <div class="alert-title">Executive Summary</div>
-    <p>This model extracts data from <strong>4</strong> Data Sources, containing <strong>15</strong> Tables, connected by <strong>0</strong> Relationships.</p>
+    <p>This model extracts data from <strong>19</strong> Data Sources, containing <strong>19</strong> Tables, connected by <strong>17</strong> Relationships.</p>
     <p>The model defines <strong>45</strong> DAX Measures and <strong>67</strong> Calculated Columns to support <strong>6</strong> Report Pages.</p>
 </div>
 
@@ -2382,10 +2384,10 @@ pre:hover .copy-btn { opacity: 1; }
 <table>
 <thead><tr><th>#</th><th>Table Name</th><th>Connection Type</th><th>Source Excerpt</th></tr></thead>
 <tbody>
-<tr data-object-type="table" data-object-name="sales_vs_budget_monthly" data-table="sales_vs_budget_monthly"><td>1</td><td><strong><a href="#sec2-tbl-sales_vs_budget_monthly">sales_vs_budget_monthly</a></strong></td><td>SQL Server</td><td><code>let
-    Source = Sql.Database(&quot;localhost&quot;, &quot;NetSuiteDW&quot;, [Query=&quot;select * from bus.sales_vs_budget_m…</code></td></tr>
-<tr data-object-type="table" data-object-name="sales_pipeline" data-table="sales_pipeline"><td>2</td><td><strong><a href="#sec2-tbl-sales_pipeline">sales_pipeline</a></strong></td><td>SQL Server</td><td><code>let
+<tr data-object-type="table" data-object-name="sales_pipeline" data-table="sales_pipeline"><td>1</td><td><strong><a href="#sec2-tbl-sales_pipeline">sales_pipeline</a></strong></td><td>SQL Server</td><td><code>let
     Source = Sql.Database(&quot;localhost&quot;, &quot;NetSuiteDW&quot;, [Query=&quot;select * from bus.sales_pipeline&quot;])…</code></td></tr>
+<tr data-object-type="table" data-object-name="sales_vs_budget_monthly" data-table="sales_vs_budget_monthly"><td>2</td><td><strong><a href="#sec2-tbl-sales_vs_budget_monthly">sales_vs_budget_monthly</a></strong></td><td>SQL Server</td><td><code>let
+    Source = Sql.Database(&quot;localhost&quot;, &quot;NetSuiteDW&quot;, [Query=&quot;select * from bus.sales_vs_budget_m…</code></td></tr>
 </tbody></table>
 <hr>
 <h3 id="sec1-3">1.3 Other <a href="#sec1-3" class="section-anchor">#</a></h3>
@@ -2401,12 +2403,12 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 <table>
 <thead><tr><th>#</th><th>Table</th><th>Source</th><th>Type</th></tr></thead>
 <tbody>
-<tr data-object-type="table" data-object-name="Calendar" data-table="Calendar"><td>1</td><td><strong><a href="#sec2-tbl-Calendar">Calendar</a></strong></td><td><code>ADDCOLUMNS(
-    CALENDAR ( DATE(2022, 1, 1), TODAY() ),
-
-    &quot;Year&quot;, YEAR([Date]),
-    
-    &quot;Month N…</code></td><td>DAX Calculated Table</td></tr>
+<tr data-object-type="table" data-object-name="Calendar" data-table="Calendar"><td>1</td><td><strong><a href="#sec2-tbl-Calendar">Calendar</a></strong></td><td><code>```
+				
+				ADDCOLUMNS(
+				    CALENDAR ( DATE(2022, 1, 1), TODAY() ),
+				
+				    &quot;Year&quot;, YEAR([…</code></td><td>DAX Calculated Table</td></tr>
 <tr data-object-type="table" data-object-name="Dim Business Unit" data-table="Dim Business Unit"><td>2</td><td><strong><a href="#sec2-tbl-Dim_Business_Unit">Dim Business Unit</a></strong></td><td><code>DISTINCT(
     UNION(
         SELECTCOLUMNS(
@@ -2427,7 +2429,19 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 
 
 <h2 id="sec2">2. Power Query Transformations (Modeling) <a href="#sec2" class="section-anchor">#</a></h2>
-<h3 id="sec2-tbl-DT_Last_Modified">2.1 DT-Last Modified <a href="#sec2-tbl-DT_Last_Modified" class="section-anchor">#</a></h3>
+<h3 id="sec2-tbl-Calculated_Measures">2.1 Calculated Measures <a href="#sec2-tbl-Calculated_Measures" class="section-anchor">#</a></h3>
+<details open><summary style="cursor: pointer; font-weight: 600; margin-bottom: 8px;">View M-code Steps (3)</summary>
+<ol>
+  <li><strong>Source</strong>:
+<pre><code>[binary payload omitted]</code></pre></li>
+  <li><strong>Changed Type</strong>:
+<pre><code>Table.TransformColumnTypes(Source,{{&quot;Column1&quot;, type text}})</code></pre></li>
+  <li><strong>Removed Columns</strong>:
+<pre><code>Table.RemoveColumns(#&quot;Changed Type&quot;,{&quot;Column1&quot;})</code></pre></li>
+</ol>
+</details>
+<hr>
+<h3 id="sec2-tbl-DT_Last_Modified">2.2 DT-Last Modified <a href="#sec2-tbl-DT_Last_Modified" class="section-anchor">#</a></h3>
 <details open><summary style="cursor: pointer; font-weight: 600; margin-bottom: 8px;">View M-code Steps (8)</summary>
 <ol>
   <li><strong>Source</strong>:
@@ -2449,19 +2463,24 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 </ol>
 </details>
 <hr>
-<h3 id="sec2-tbl-Calculated_Measures">2.2 Calculated Measures <a href="#sec2-tbl-Calculated_Measures" class="section-anchor">#</a></h3>
-<details open><summary style="cursor: pointer; font-weight: 600; margin-bottom: 8px;">View M-code Steps (3)</summary>
+<h3 id="sec2-tbl-sales_pipeline">2.3 sales_pipeline <a href="#sec2-tbl-sales_pipeline" class="section-anchor">#</a></h3>
+<details open><summary style="cursor: pointer; font-weight: 600; margin-bottom: 8px;">View M-code Steps (2)</summary>
 <ol>
   <li><strong>Source</strong>:
-<pre><code>[binary payload omitted]</code></pre></li>
+<pre><code>Sql.Database(&quot;localhost&quot;, &quot;NetSuiteDW&quot;, [Query=&quot;select * from bus.sales_pipeline&quot;])</code></pre></li>
   <li><strong>Changed Type</strong>:
-<pre><code>Table.TransformColumnTypes(Source,{{&quot;Column1&quot;, type text}})</code></pre></li>
-  <li><strong>Removed Columns</strong>:
-<pre><code>Table.RemoveColumns(#&quot;Changed Type&quot;,{&quot;Column1&quot;})</code></pre></li>
+<pre><code>Table.TransformColumnTypes(
+    Source,
+    {
+        {&quot;foreign_amount&quot;, Currency.Type},
+        {&quot;amount_bu_currency&quot;, Currency.Type},
+        {&quot;amount_usd&quot;, Currency.Type}
+    }
+)</code></pre></li>
 </ol>
 </details>
 <hr>
-<h3 id="sec2-tbl-sales_vs_budget_monthly">2.3 sales_vs_budget_monthly <a href="#sec2-tbl-sales_vs_budget_monthly" class="section-anchor">#</a></h3>
+<h3 id="sec2-tbl-sales_vs_budget_monthly">2.4 sales_vs_budget_monthly <a href="#sec2-tbl-sales_vs_budget_monthly" class="section-anchor">#</a></h3>
 <details open><summary style="cursor: pointer; font-weight: 600; margin-bottom: 8px;">View M-code Steps (2)</summary>
 <ol>
   <li><strong>Source</strong>:
@@ -2483,70 +2502,57 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 </ol>
 </details>
 <hr>
-<h3 id="sec2-tbl-sales_pipeline">2.4 sales_pipeline <a href="#sec2-tbl-sales_pipeline" class="section-anchor">#</a></h3>
-<details open><summary style="cursor: pointer; font-weight: 600; margin-bottom: 8px;">View M-code Steps (2)</summary>
-<ol>
-  <li><strong>Source</strong>:
-<pre><code>Sql.Database(&quot;localhost&quot;, &quot;NetSuiteDW&quot;, [Query=&quot;select * from bus.sales_pipeline&quot;])</code></pre></li>
-  <li><strong>Changed Type</strong>:
-<pre><code>Table.TransformColumnTypes(
-    Source,
-    {
-        {&quot;foreign_amount&quot;, Currency.Type},
-        {&quot;amount_bu_currency&quot;, Currency.Type},
-        {&quot;amount_usd&quot;, Currency.Type}
-    }
-)</code></pre></li>
-</ol>
-</details>
-<hr>
 <h3 id="sec2-tbl-Calendar">2.5 Calendar (DAX Calculated Table) <a href="#sec2-tbl-Calendar" class="section-anchor">#</a></h3>
-<pre><code>ADDCOLUMNS(
-    CALENDAR ( DATE(2022, 1, 1), TODAY() ),
-
-    &quot;Year&quot;, YEAR([Date]),
-    
-    &quot;Month Number&quot;, MONTH([Date]),
-    &quot;Month Name&quot;, FORMAT([Date], &quot;MMMM&quot;),
-    
-    &quot;Month Year&quot;, FORMAT([Date], &quot;MMM-YY&quot;),
-    &quot;YearMonth Sort&quot;, YEAR([Date]) * 100 + MONTH([Date]),
-    
-    &quot;Day&quot;, DAY([Date]),
-    
-    &quot;Day of Week Number&quot;, WEEKDAY([Date], 2), -- Monday = 1
-    &quot;Day Name&quot;, FORMAT([Date], &quot;dddd&quot;),
-    
-    &quot;Is Weekend&quot;, IF(WEEKDAY([Date], 2) &gt; 5, TRUE(), FALSE()),
-    
-    &quot;Week Number&quot;, WEEKNUM([Date], 2),
-    
-    &quot;Today&#x27;s Date&quot;, TODAY(),
-
-    &quot;Is Last 3 Months&quot;,
-        [Date] &gt;= DATE(
-            YEAR(EDATE(TODAY(), -3)),
-            MONTH(EDATE(TODAY(), -3)),
-            1
-        )
-        &amp;&amp; [Date] &lt;= TODAY(),
-
-    &quot;Is Last 6 Months&quot;,
-        [Date] &gt;= DATE(
-            YEAR(EDATE(TODAY(), -6)),
-            MONTH(EDATE(TODAY(), -6)),
-            1
-        )
-        &amp;&amp; [Date] &lt;= TODAY(),
-
-    &quot;Is Last 12 Months&quot;,
-        [Date] &gt;= DATE(
-            YEAR(EDATE(TODAY(), -12)),
-            MONTH(EDATE(TODAY(), -12)),
-            1
-        )
-        &amp;&amp; [Date] &lt;= TODAY()
-)</code></pre>
+<pre><code>```
+				
+				ADDCOLUMNS(
+				    CALENDAR ( DATE(2022, 1, 1), TODAY() ),
+				
+				    &quot;Year&quot;, YEAR([Date]),
+				    
+				    &quot;Month Number&quot;, MONTH([Date]),
+				    &quot;Month Name&quot;, FORMAT([Date], &quot;MMMM&quot;),
+				    
+				    &quot;Month Year&quot;, FORMAT([Date], &quot;MMM-YY&quot;),
+				    &quot;YearMonth Sort&quot;, YEAR([Date]) * 100 + MONTH([Date]),
+				    
+				    &quot;Day&quot;, DAY([Date]),
+				    
+				    &quot;Day of Week Number&quot;, WEEKDAY([Date], 2), -- Monday = 1
+				    &quot;Day Name&quot;, FORMAT([Date], &quot;dddd&quot;),
+				    
+				    &quot;Is Weekend&quot;, IF(WEEKDAY([Date], 2) &gt; 5, TRUE(), FALSE()),
+				    
+				    &quot;Week Number&quot;, WEEKNUM([Date], 2),
+				    
+				    &quot;Today&#x27;s Date&quot;, TODAY(),
+				
+				    &quot;Is Last 3 Months&quot;,
+				        [Date] &gt;= DATE(
+				            YEAR(EDATE(TODAY(), -3)),
+				            MONTH(EDATE(TODAY(), -3)),
+				            1
+				        )
+				        &amp;&amp; [Date] &lt;= TODAY(),
+				
+				    &quot;Is Last 6 Months&quot;,
+				        [Date] &gt;= DATE(
+				            YEAR(EDATE(TODAY(), -6)),
+				            MONTH(EDATE(TODAY(), -6)),
+				            1
+				        )
+				        &amp;&amp; [Date] &lt;= TODAY(),
+				
+				    &quot;Is Last 12 Months&quot;,
+				        [Date] &gt;= DATE(
+				            YEAR(EDATE(TODAY(), -12)),
+				            MONTH(EDATE(TODAY(), -12)),
+				            1
+				        )
+				        &amp;&amp; [Date] &lt;= TODAY()
+				)
+				
+				```</code></pre>
 <hr>
 <h3 id="sec2-tbl-Dim_Business_Unit">2.6 Dim Business Unit (DAX Calculated Table) <a href="#sec2-tbl-Dim_Business_Unit" class="section-anchor">#</a></h3>
 <pre><code>DISTINCT(
@@ -2593,7 +2599,33 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 
 
 <h2 id="sec3">3. Relationships <a href="#sec3" class="section-anchor">#</a></h2>
-<p><em>No relationships found.</em></p>
+<table>
+<thead><tr><th>#</th><th>From Table</th><th>From Column</th><th>→</th><th>To Table</th><th>To Column</th><th>Cross-Filter</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>sales_vs_budget_monthly</td><td><code>period_end</code></td><td>→</td><td>Calendar</td><td><code>Date</code></td><td>Single</td></tr>
+<tr><td>2</td><td>sales_pipeline</td><td><code>sales_month_end</code></td><td>→</td><td>Calendar</td><td><code>Date</code></td><td>Single</td></tr>
+<tr><td>3</td><td>sales_pipeline</td><td><code>transaction_date</code></td><td>→</td><td>Calendar</td><td><code>Date</code></td><td>Single</td></tr>
+<tr><td>4</td><td>sales_pipeline</td><td><code>bu_code</code></td><td>→</td><td>Dim Business Unit</td><td><code>Business Unit</code></td><td>Single</td></tr>
+<tr><td>5</td><td>sales_vs_budget_monthly</td><td><code>bu_code</code></td><td>→</td><td>Dim Business Unit</td><td><code>Business Unit</code></td><td>Single</td></tr>
+<tr><td>6</td><td>sales_vs_budget_monthly</td><td><code>customer_name</code></td><td>→</td><td>Dim Customer</td><td><code>Customer</code></td><td>Single</td></tr>
+<tr><td>7</td><td>sales_pipeline</td><td><code>customer_name</code></td><td>→</td><td>Dim Customer</td><td><code>Customer</code></td><td>Single</td></tr>
+</tbody></table>
+<h4>Data Model Diagram</h4>
+<pre class="mermaid">
+graph LR
+    Calendar["Calendar"]
+    Dim_Business_Unit["Dim Business Unit"]
+    Dim_Customer["Dim Customer"]
+    sales_pipeline["sales_pipeline"]
+    sales_vs_budget_monthly["sales_vs_budget_monthly"]
+    sales_vs_budget_monthly -->|"period_end"| Calendar
+    sales_pipeline -->|"sales_month_end"| Calendar
+    sales_pipeline -->|"transaction_date"| Calendar
+    sales_pipeline -->|"bu_code"| Dim_Business_Unit
+    sales_vs_budget_monthly -->|"bu_code"| Dim_Business_Unit
+    sales_vs_budget_monthly -->|"customer_name"| Dim_Customer
+    sales_pipeline -->|"customer_name"| Dim_Customer
+</pre>
 
 
 <h2 id="sec4">4. DAX Measures <a href="#sec4" class="section-anchor">#</a></h2>
@@ -2619,28 +2651,40 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 <details id="measure-Actual_Budget_Achievement__" data-object-type="measure" data-object-name="Actual Budget Achievement %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Actual Budget Achievement %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Actual Sales USD],
-    [Sales Budget USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Actual Sales USD],
+			    [Sales Budget USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Actual Sales USD]</strong> by <strong>[Sales Budget USD]</strong></div>
 </div></details>
 <details id="measure-Actual_Budget_Variance__" data-object-type="measure" data-object-name="Actual Budget Variance %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Actual Budget Variance %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Actual vs Budget Variance USD],
-    [Sales Budget USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Actual vs Budget Variance USD],
+			    [Sales Budget USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Actual vs Budget Variance USD]</strong> by <strong>[Sales Budget USD]</strong></div>
 </div></details>
 <details id="measure-Actual_Sales_Share__" data-object-type="measure" data-object-name="Actual Sales Share %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Actual Sales Share %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Actual Sales USD],
-    [Estimated Sales Landing USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Actual Sales USD],
+			    [Estimated Sales Landing USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Actual Sales USD]</strong> by <strong>[Estimated Sales Landing USD]</strong></div>
 </div></details>
 <details id="measure-Actual_Sales_USD" data-object-type="measure" data-object-name="Actual Sales USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
@@ -2651,45 +2695,60 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 )</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the sum of <strong>[actual_sales_usd]</strong></div>
   <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 2 Visuals</span>
+    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
     <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
       <li><strong>Overview</strong> &mdash; Matrix</li>
-      <li><strong>Overview</strong> &mdash; cardVisual</li>
     </ul>
   </div>
 </div></details>
 <details id="measure-Actual_vs_Budget_Variance_USD" data-object-type="measure" data-object-name="Actual vs Budget Variance USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Actual vs Budget Variance USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>[Actual Sales USD]
-    - [Sales Budget USD]</code></pre>
+<pre><code>```
+			
+			[Actual Sales USD]
+			    - [Sales Budget USD]
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><strong>[Actual Sales USD]</strong> minus <strong>[Sales Budget USD]</strong></div>
 </div></details>
 <details id="measure-Average_Open_Opportunity_Value_USD" data-object-type="measure" data-object-name="Average Open Opportunity Value USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Average Open Opportunity Value USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Pipeline Open Opportunities USD],
-    [Open Opportunity Count]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Pipeline Open Opportunities USD],
+			    [Open Opportunity Count]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Pipeline Open Opportunities USD]</strong> by <strong>[Open Opportunity Count]</strong></div>
 </div></details>
 <details id="measure-Average_Open_Pipeline_Transaction_Value_USD" data-object-type="measure" data-object-name="Average Open Pipeline Transaction Value USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Average Open Pipeline Transaction Value USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Pipeline Total Open USD],
-    [Total Open Pipeline Transaction Count]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Pipeline Total Open USD],
+			    [Total Open Pipeline Transaction Count]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Pipeline Total Open USD]</strong> by <strong>[Total Open Pipeline Transaction Count]</strong></div>
 </div></details>
 <details id="measure-Average_Open_Sales_Order_Value_USD" data-object-type="measure" data-object-name="Average Open Sales Order Value USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Average Open Sales Order Value USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Pipeline Open Sales Orders USD],
-    [Open Sales Order Count]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Pipeline Open Sales Orders USD],
+			    [Open Sales Order Count]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Pipeline Open Sales Orders USD]</strong> by <strong>[Open Sales Order Count]</strong></div>
 </div></details>
 <details id="measure-Estimated_Sales_Landing_USD" data-object-type="measure" data-object-name="Estimated Sales Landing USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
@@ -2700,12 +2759,11 @@ Source = #table(type table[Date Last Refreshed=datetime], {{DateTime.LocalNow()}
 )</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the sum of <strong>[estimated_sales_landing_usd]</strong></div>
   <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 4 Visuals</span>
+    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 3 Visuals</span>
     <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
       <li><strong>Overview</strong> &mdash; Clustered bar chart "Landing vs Budget by Business Unit"</li>
       <li><strong>Overview</strong> &mdash; Line chart "Landing vs Budget"</li>
       <li><strong>Overview</strong> &mdash; Matrix</li>
-      <li><strong>Overview</strong> &mdash; cardVisual</li>
     </ul>
   </div>
 </div></details>
@@ -2735,15 +2793,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,
                          &#x27;SF Pro Display&#x27;, sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -2914,15 +2972,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                          'SF Pro Display', sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -3074,12 +3132,6 @@ RETURN
     </div>
 </body>
 </html>"</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855 "Temperature Card"</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-HTML_Card_Estimated_Sales_Landing" data-object-type="measure" data-object-name="HTML Card Estimated Sales Landing" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">HTML Card Estimated Sales Landing</summary>
@@ -3107,15 +3159,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,
                          &#x27;SF Pro Display&#x27;, sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -3286,15 +3338,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                          'SF Pro Display', sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -3446,12 +3498,6 @@ RETURN
     </div>
 </body>
 </html>"</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855 "Temperature Card"</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-HTML_Card_Landing_vs_Budget_Variance" data-object-type="measure" data-object-name="HTML Card Landing vs Budget Variance" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">HTML Card Landing vs Budget Variance</summary>
@@ -3479,15 +3525,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,
                          &#x27;SF Pro Display&#x27;, sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -3660,15 +3706,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                          'SF Pro Display', sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -3822,12 +3868,6 @@ RETURN
     </div>
 </body>
 </html>"</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855 "Temperature Card"</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-HTML_Card_Open_Opportunities" data-object-type="measure" data-object-name="HTML Card Open Opportunities" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">HTML Card Open Opportunities</summary>
@@ -3855,15 +3895,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,
                          &#x27;SF Pro Display&#x27;, sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -4036,15 +4076,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                          'SF Pro Display', sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -4198,12 +4238,6 @@ RETURN
     </div>
 </body>
 </html>"</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855 "Temperature Card"</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-HTML_Card_Open_Sales_Orders" data-object-type="measure" data-object-name="HTML Card Open Sales Orders" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">HTML Card Open Sales Orders</summary>
@@ -4231,15 +4265,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,
                          &#x27;SF Pro Display&#x27;, sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -4412,15 +4446,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                          'SF Pro Display', sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -4574,12 +4608,6 @@ RETURN
     </div>
 </body>
 </html>"</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855 "Temperature Card"</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-HTML_Card_Sales_Budget" data-object-type="measure" data-object-name="HTML Card Sales Budget" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">HTML Card Sales Budget</summary>
@@ -4607,15 +4635,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;,
                          &#x27;SF Pro Display&#x27;, sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -4789,15 +4817,15 @@ RETURN
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                          'SF Pro Display', sans-serif;
             background: transparent;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .card-frame {
             position: relative;
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: #FFFFFF;
-            overflow: hidden;
+            overflow: visible;
             cursor: pointer;
         }
 
@@ -4952,36 +4980,38 @@ RETURN
     </div>
 </body>
 </html>"</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855 "Temperature Card"</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-Landing_Achievement_Colour" data-object-type="measure" data-object-name="Landing Achievement Colour" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Landing Achievement Colour</summary>
 <div style="margin-top: 8px;">
-<pre><code>VAR Achievement =
-    [Landing Budget Achievement %]
-
-RETURN
-    SWITCH(
-        TRUE(),
-        ISBLANK(Achievement), &quot;#808080&quot;,
-        Achievement &gt;= 1, &quot;#2E7D32&quot;,
-        Achievement &gt;= 0.9, &quot;#F9A825&quot;,
-        &quot;#C62828&quot;
-    )</code></pre>
+<pre><code>```
+			
+			VAR Achievement =
+			    [Landing Budget Achievement %]
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(Achievement), &quot;#808080&quot;,
+			        Achievement &gt;= 1, &quot;#2E7D32&quot;,
+			        Achievement &gt;= 0.9, &quot;#F9A825&quot;,
+			        &quot;#C62828&quot;
+			    )
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><em>Variables defined: </em><ul><li><code>Achievement</code> = <strong>[Landing Budget Achievement %]</strong></li></ul>. <em>Returns: </em><br/>when <code>ISBLANK(<code>Achievement</code>)</code> then "#808080"; when <code>Achievement</code> is greater than or equal to 1 then "#2E7D32"; when <code>Achievement</code> is greater than or equal to 0.9 then "#F9A825"; otherwise "#C62828"</div>
 </div></details>
 <details id="measure-Landing_Budget_Achievement__" data-object-type="measure" data-object-name="Landing Budget Achievement %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Landing Budget Achievement %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Estimated Sales Landing USD],
-    [Sales Budget USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Estimated Sales Landing USD],
+			    [Sales Budget USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Estimated Sales Landing USD]</strong> by <strong>[Sales Budget USD]</strong></div>
   <div style="margin-top: 15px;">
     <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
@@ -4993,54 +5023,64 @@ RETURN
 <details id="measure-Landing_Budget_Variance__" data-object-type="measure" data-object-name="Landing Budget Variance %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Landing Budget Variance %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Landing vs Budget Variance USD],
-    [Sales Budget USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Landing vs Budget Variance USD],
+			    [Sales Budget USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Landing vs Budget Variance USD]</strong> by <strong>[Sales Budget USD]</strong></div>
 </div></details>
 <details id="measure-Landing_Performance_Colour" data-object-type="measure" data-object-name="Landing Performance Colour" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Landing Performance Colour</summary>
 <div style="margin-top: 8px;">
-<pre><code>VAR VarianceAmount =
-    [Landing vs Budget Variance USD]
-
-RETURN
-    SWITCH(
-        TRUE(),
-        ISBLANK([Sales Budget USD]), &quot;#808080&quot;,
-        VarianceAmount &gt;= 0, &quot;#2E7D32&quot;,
-        &quot;#C62828&quot;
-    )</code></pre>
+<pre><code>```
+			
+			VAR VarianceAmount =
+			    [Landing vs Budget Variance USD]
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK([Sales Budget USD]), &quot;#808080&quot;,
+			        VarianceAmount &gt;= 0, &quot;#2E7D32&quot;,
+			        &quot;#C62828&quot;
+			    )
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><em>Variables defined: </em><ul><li><code>VarianceAmount</code> = <strong>[Landing vs Budget Variance USD]</strong></li></ul>. <em>Returns: </em><br/>when <code>ISBLANK(<strong>[Sales Budget USD]</strong>)</code> then "#808080"; when <code>VarianceAmount</code> is greater than or equal to 0 then "#2E7D32"; otherwise "#C62828"</div>
 </div></details>
 <details id="measure-Landing_Performance_Status" data-object-type="measure" data-object-name="Landing Performance Status" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Landing Performance Status</summary>
 <div style="margin-top: 8px;">
-<pre><code>VAR VarianceAmount =
-    [Landing vs Budget Variance USD]
-
-RETURN
-    SWITCH(
-        TRUE(),
-        ISBLANK([Sales Budget USD]), BLANK(),
-        VarianceAmount &gt;= 0, &quot;Above Budget&quot;,
-        &quot;Below Budget&quot;
-    )</code></pre>
+<pre><code>```
+			
+			VAR VarianceAmount =
+			    [Landing vs Budget Variance USD]
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK([Sales Budget USD]), BLANK(),
+			        VarianceAmount &gt;= 0, &quot;Above Budget&quot;,
+			        &quot;Below Budget&quot;
+			    )
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><em>Variables defined: </em><ul><li><code>VarianceAmount</code> = <strong>[Landing vs Budget Variance USD]</strong></li></ul>. <em>Returns: </em><br/>when <code>ISBLANK(<strong>[Sales Budget USD]</strong>)</code> then empty (blank); when <code>VarianceAmount</code> is greater than or equal to 0 then "Above Budget"; otherwise "Below Budget"</div>
 </div></details>
 <details id="measure-Landing_vs_Budget_Variance_USD" data-object-type="measure" data-object-name="Landing vs Budget Variance USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Landing vs Budget Variance USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>[Estimated Sales Landing USD]
-    - [Sales Budget USD]</code></pre>
+<pre><code>```
+			
+			[Estimated Sales Landing USD]
+			    - [Sales Budget USD]
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><strong>[Estimated Sales Landing USD]</strong> minus <strong>[Sales Budget USD]</strong></div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Overview</strong> &mdash; cardVisual</li>
-    </ul>
-  </div>
 </div></details>
 <details id="measure-Logged_User_Email" data-object-type="measure" data-object-name="Logged_User_Email" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Logged_User_Email</summary>
@@ -5063,10 +5103,14 @@ IF(
 <details id="measure-Open_Opportunities_Share__" data-object-type="measure" data-object-name="Open Opportunities Share %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Open Opportunities Share %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Open Opportunities USD],
-    [Estimated Sales Landing USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Open Opportunities USD],
+			    [Estimated Sales Landing USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Open Opportunities USD]</strong> by <strong>[Estimated Sales Landing USD]</strong></div>
 </div></details>
 <details id="measure-Open_Opportunities_USD" data-object-type="measure" data-object-name="Open Opportunities USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
@@ -5077,48 +5121,59 @@ IF(
 )</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the sum of <strong>[open_opportunity_usd]</strong></div>
   <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 2 Visuals</span>
+    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
     <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
       <li><strong>Overview</strong> &mdash; Matrix</li>
-      <li><strong>Overview</strong> &mdash; cardVisual</li>
     </ul>
   </div>
 </div></details>
 <details id="measure-Open_Opportunity_Count" data-object-type="measure" data-object-name="Open Opportunity Count" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Open Opportunity Count</summary>
 <div style="margin-top: 8px;">
-<pre><code>CALCULATE(
-    DISTINCTCOUNT(
-        &#x27;sales_pipeline&#x27;[transaction_number]
-    ),
-    KEEPFILTERS(
-        &#x27;sales_pipeline&#x27;[sales_record_type]
-            = &quot;OPEN OPPORTUNITY&quot;
-    )
-)</code></pre>
+<pre><code>```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(
+			        &#x27;sales_pipeline&#x27;[transaction_number]
+			    ),
+			    KEEPFILTERS(
+			        &#x27;sales_pipeline&#x27;[sales_record_type]
+			            = &quot;OPEN OPPORTUNITY&quot;
+			    )
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>Calculates the number of unique <strong>[transaction_number]</strong>, subject to the following conditions: <ul><li>while keeping existing filters: <strong>[sales_record_type]</strong> equals "OPEN OPPORTUNITY"</li></ul></div>
 </div></details>
 <details id="measure-Open_Sales_Order_Count" data-object-type="measure" data-object-name="Open Sales Order Count" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Open Sales Order Count</summary>
 <div style="margin-top: 8px;">
-<pre><code>CALCULATE(
-    DISTINCTCOUNT(
-        &#x27;sales_pipeline&#x27;[transaction_number]
-    ),
-    KEEPFILTERS(
-        &#x27;sales_pipeline&#x27;[sales_record_type]
-            = &quot;OPEN SALES ORDER&quot;
-    )
-)</code></pre>
+<pre><code>```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(
+			        &#x27;sales_pipeline&#x27;[transaction_number]
+			    ),
+			    KEEPFILTERS(
+			        &#x27;sales_pipeline&#x27;[sales_record_type]
+			            = &quot;OPEN SALES ORDER&quot;
+			    )
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>Calculates the number of unique <strong>[transaction_number]</strong>, subject to the following conditions: <ul><li>while keeping existing filters: <strong>[sales_record_type]</strong> equals "OPEN SALES ORDER"</li></ul></div>
 </div></details>
 <details id="measure-Open_Sales_Orders_Share__" data-object-type="measure" data-object-name="Open Sales Orders Share %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Open Sales Orders Share %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Open Sales Orders USD],
-    [Estimated Sales Landing USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Open Sales Orders USD],
+			    [Estimated Sales Landing USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Open Sales Orders USD]</strong> by <strong>[Estimated Sales Landing USD]</strong></div>
 </div></details>
 <details id="measure-Open_Sales_Orders_USD" data-object-type="measure" data-object-name="Open Sales Orders USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
@@ -5129,109 +5184,148 @@ IF(
 )</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the sum of <strong>[open_sales_order_usd]</strong></div>
   <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 2 Visuals</span>
+    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
     <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
       <li><strong>Overview</strong> &mdash; Matrix</li>
-      <li><strong>Overview</strong> &mdash; cardVisual</li>
     </ul>
   </div>
 </div></details>
 <details id="measure-Pipeline_Actual_Sales_USD" data-object-type="measure" data-object-name="Pipeline Actual Sales USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Actual Sales USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>CALCULATE(
-    SUM(
-        &#x27;sales_pipeline&#x27;[amount_usd]
-    ),
-    KEEPFILTERS(
-        &#x27;sales_pipeline&#x27;[sales_record_type]
-            = &quot;ACTUAL&quot;
-    )
-)</code></pre>
+<pre><code>```
+			
+			CALCULATE(
+			    SUM(
+			        &#x27;sales_pipeline&#x27;[amount_usd]
+			    ),
+			    KEEPFILTERS(
+			        &#x27;sales_pipeline&#x27;[sales_record_type]
+			            = &quot;ACTUAL&quot;
+			    )
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>Calculates the sum of <strong>[amount_usd]</strong>, subject to the following conditions: <ul><li>while keeping existing filters: <strong>[sales_record_type]</strong> equals "ACTUAL"</li></ul></div>
 </div></details>
 <details id="measure-Pipeline_Estimated_Landing_USD" data-object-type="measure" data-object-name="Pipeline Estimated Landing USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Estimated Landing USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>[Pipeline Actual Sales USD]
-    + [Pipeline Total Open USD]</code></pre>
+<pre><code>```
+			
+			[Pipeline Actual Sales USD]
+			    + [Pipeline Total Open USD]
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><strong>[Pipeline Actual Sales USD]</strong> plus <strong>[Pipeline Total Open USD]</strong></div>
 </div></details>
 <details id="measure-Pipeline_Line_Count" data-object-type="measure" data-object-name="Pipeline Line Count" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Line Count</summary>
 <div style="margin-top: 8px;">
-<pre><code>COUNTROWS(
-    &#x27;sales_pipeline&#x27;
-)</code></pre>
+<pre><code>```
+			
+			COUNTROWS(
+			    &#x27;sales_pipeline&#x27;
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the number of rows in <code>sales_pipeline</code></div>
 </div></details>
 <details id="measure-Pipeline_Open_Opportunities_Share__" data-object-type="measure" data-object-name="Pipeline Open Opportunities Share %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Open Opportunities Share %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Pipeline Open Opportunities USD],
-    [Pipeline Total Open USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Pipeline Open Opportunities USD],
+			    [Pipeline Total Open USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Pipeline Open Opportunities USD]</strong> by <strong>[Pipeline Total Open USD]</strong></div>
 </div></details>
 <details id="measure-Pipeline_Open_Opportunities_USD" data-object-type="measure" data-object-name="Pipeline Open Opportunities USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Open Opportunities USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>CALCULATE(
-    SUM(
-        &#x27;sales_pipeline&#x27;[amount_usd]
-    ),
-    KEEPFILTERS(
-        &#x27;sales_pipeline&#x27;[sales_record_type]
-            = &quot;OPEN OPPORTUNITY&quot;
-    )
-)</code></pre>
+<pre><code>```
+			
+			CALCULATE(
+			    SUM(
+			        &#x27;sales_pipeline&#x27;[amount_usd]
+			    ),
+			    KEEPFILTERS(
+			        &#x27;sales_pipeline&#x27;[sales_record_type]
+			            = &quot;OPEN OPPORTUNITY&quot;
+			    )
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>Calculates the sum of <strong>[amount_usd]</strong>, subject to the following conditions: <ul><li>while keeping existing filters: <strong>[sales_record_type]</strong> equals "OPEN OPPORTUNITY"</li></ul></div>
 </div></details>
 <details id="measure-Pipeline_Open_Sales_Orders_Share__" data-object-type="measure" data-object-name="Pipeline Open Sales Orders Share %" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Open Sales Orders Share %</summary>
 <div style="margin-top: 8px;">
-<pre><code>DIVIDE(
-    [Pipeline Open Sales Orders USD],
-    [Pipeline Total Open USD]
-)</code></pre>
+<pre><code>```
+			
+			DIVIDE(
+			    [Pipeline Open Sales Orders USD],
+			    [Pipeline Total Open USD]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>divides <strong>[Pipeline Open Sales Orders USD]</strong> by <strong>[Pipeline Total Open USD]</strong></div>
 </div></details>
 <details id="measure-Pipeline_Open_Sales_Orders_USD" data-object-type="measure" data-object-name="Pipeline Open Sales Orders USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Open Sales Orders USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>CALCULATE(
-    SUM(
-        &#x27;sales_pipeline&#x27;[amount_usd]
-    ),
-    KEEPFILTERS(
-        &#x27;sales_pipeline&#x27;[sales_record_type]
-            = &quot;OPEN SALES ORDER&quot;
-    )
-)</code></pre>
+<pre><code>```
+			
+			CALCULATE(
+			    SUM(
+			        &#x27;sales_pipeline&#x27;[amount_usd]
+			    ),
+			    KEEPFILTERS(
+			        &#x27;sales_pipeline&#x27;[sales_record_type]
+			            = &quot;OPEN SALES ORDER&quot;
+			    )
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>Calculates the sum of <strong>[amount_usd]</strong>, subject to the following conditions: <ul><li>while keeping existing filters: <strong>[sales_record_type]</strong> equals "OPEN SALES ORDER"</li></ul></div>
 </div></details>
 <details id="measure-Pipeline_Quantity" data-object-type="measure" data-object-name="Pipeline Quantity" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Quantity</summary>
 <div style="margin-top: 8px;">
-<pre><code>SUM(
-    &#x27;sales_pipeline&#x27;[quantity]
-)</code></pre>
+<pre><code>```
+			
+			SUM(
+			    &#x27;sales_pipeline&#x27;[quantity]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the sum of <strong>[quantity]</strong></div>
 </div></details>
 <details id="measure-Pipeline_Total_Open_USD" data-object-type="measure" data-object-name="Pipeline Total Open USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Total Open USD</summary>
 <div style="margin-top: 8px;">
-<pre><code>[Pipeline Open Sales Orders USD]
-    + [Pipeline Open Opportunities USD]</code></pre>
+<pre><code>```
+			
+			[Pipeline Open Sales Orders USD]
+			    + [Pipeline Open Opportunities USD]
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><strong>[Pipeline Open Sales Orders USD]</strong> plus <strong>[Pipeline Open Opportunities USD]</strong></div>
 </div></details>
 <details id="measure-Pipeline_Transaction_Count" data-object-type="measure" data-object-name="Pipeline Transaction Count" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Pipeline Transaction Count</summary>
 <div style="margin-top: 8px;">
-<pre><code>DISTINCTCOUNT(
-    &#x27;sales_pipeline&#x27;[transaction_number]
-)</code></pre>
+<pre><code>```
+			
+			DISTINCTCOUNT(
+			    &#x27;sales_pipeline&#x27;[transaction_number]
+			)
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the number of unique <strong>[transaction_number]</strong></div>
 </div></details>
 <details id="measure-Sales_Budget_USD" data-object-type="measure" data-object-name="Sales Budget USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
@@ -5242,19 +5336,22 @@ IF(
 )</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/>the sum of <strong>[sales_budget_usd]</strong></div>
   <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 3 Visuals</span>
+    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 2 Visuals</span>
     <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
       <li><strong>Overview</strong> &mdash; Clustered bar chart "Landing vs Budget by Business Unit"</li>
       <li><strong>Overview</strong> &mdash; Matrix</li>
-      <li><strong>Overview</strong> &mdash; cardVisual</li>
     </ul>
   </div>
 </div></details>
 <details id="measure-Total_Open_Pipeline_Transaction_Count" data-object-type="measure" data-object-name="Total Open Pipeline Transaction Count" data-table="Calculated Measures" style="margin-bottom: 12px;">
 <summary style="cursor: pointer; font-weight: 600; font-size: 15px;">Total Open Pipeline Transaction Count</summary>
 <div style="margin-top: 8px;">
-<pre><code>[Open Sales Order Count]
-    + [Open Opportunity Count]</code></pre>
+<pre><code>```
+			
+			[Open Sales Order Count]
+			    + [Open Opportunity Count]
+			
+			```</code></pre>
 <div class="dax-explanation"><strong>💡 Auto-Explanation (Beta):</strong><br/><br/><strong>[Open Sales Order Count]</strong> plus <strong>[Open Opportunity Count]</strong></div>
 </div></details>
 <details id="measure-Total_Open_Pipeline_USD" data-object-type="measure" data-object-name="Total Open Pipeline USD" data-table="Calculated Measures" style="margin-bottom: 12px;">
@@ -5280,7 +5377,7 @@ RETURN
   width:1280px;
   height:650px;
   position:relative;
-  overflow:hidden;
+  overflow: visible;
   margin:0;
   padding:0;
   background:#FFFFFF;
@@ -5487,7 +5584,7 @@ RETURN
   width:1280px;
   height:650px;
   position:relative;
-  overflow:hidden;
+  overflow: visible;
   margin:0;
   padding:0;
   background:#FFFFFF;
@@ -5689,12 +5786,6 @@ RETURN
 
 </div>
 "</div>
-  <div style="margin-top: 15px;">
-    <span style="background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;">Used in 1 Visuals</span>
-    <ul style="font-size: 13px; color: var(--fg-muted); margin-top: 5px; padding-left: 20px;">
-      <li><strong>Home</strong> &mdash; htmlContent443BE3AD55E043BF878BED274D3A6855</li>
-    </ul>
-  </div>
 </div></details>
 <h3 id="sec4-2">4.2 Measures on Sales Composition <a href="#sec4-2" class="section-anchor">#</a></h3>
 <details id="measure-Sales_Composition_Value" data-object-type="measure" data-object-name="Sales Composition Value" data-table="Sales Composition" style="margin-bottom: 12px;">
@@ -5731,7 +5822,7 @@ RETURN
 <h2 id="sec6">6. Observations for Redevelopment <a href="#sec6" class="section-anchor">#</a></h2>
 <div class="alert alert-note"><div class="alert-title">Measure Count</div>This model contains <strong>45</strong> DAX measures. Consider Calculation Groups to reduce duplication.</div>
 <div class="alert alert-tip"><div class="alert-title">Calculated Columns</div>There are <strong>67</strong> DAX calculated columns. Consider moving transformations to Power Query for better performance.</div>
-<div class="alert alert-note"><div class="alert-title">Unused Measures</div>28 measures defined but not bound to any report visual: <strong>#TXTMainPage</strong>, <strong>Actual Budget Achievement %</strong>, <strong>Actual Budget Variance %</strong>, <strong>Actual Sales Share %</strong>, <strong>Actual vs Budget Variance USD</strong>, <strong>Average Open Opportunity Value USD</strong>, <strong>Average Open Pipeline Transaction Value USD</strong>, <strong>Average Open Sales Order Value USD</strong>, <strong>Landing Achievement Colour</strong>, <strong>Landing Budget Variance %</strong> … and 18 more.</div>
+<div class="alert alert-note"><div class="alert-title">Unused Measures</div>36 measures defined but not bound to any report visual: <strong>#TXTMainPage</strong>, <strong>Actual Budget Achievement %</strong>, <strong>Actual Budget Variance %</strong>, <strong>Actual Sales Share %</strong>, <strong>Actual vs Budget Variance USD</strong>, <strong>Average Open Opportunity Value USD</strong>, <strong>Average Open Pipeline Transaction Value USD</strong>, <strong>Average Open Sales Order Value USD</strong>, <strong>HTML Card Actual Sales</strong>, <strong>HTML Card Estimated Sales Landing</strong> … and 26 more.</div>
 
 
 <h2 id="sec7">7. Measure Lineage <a href="#sec7" class="section-anchor">#</a></h2>
@@ -5797,48 +5888,48 @@ graph LR
     total_open_pipeline_usd -.-> Total_Open_Pipeline_USD
     estimated_sales_landing_usd -.-> Estimated_Sales_Landing_USD
     sales_budget_usd -.-> Sales_Budget_USD
-    Actual_Sales_USD --> Actual_vs_Budget_Variance_USD
     Sales_Budget_USD --> Actual_vs_Budget_Variance_USD
+    Actual_Sales_USD --> Actual_vs_Budget_Variance_USD
     Sales_Budget_USD --> Landing_vs_Budget_Variance_USD
     Estimated_Sales_Landing_USD --> Landing_vs_Budget_Variance_USD
-    Actual_Sales_USD --> Actual_Budget_Achievement__
     Sales_Budget_USD --> Actual_Budget_Achievement__
+    Actual_Sales_USD --> Actual_Budget_Achievement__
     Sales_Budget_USD --> Landing_Budget_Achievement__
     Estimated_Sales_Landing_USD --> Landing_Budget_Achievement__
-    Sales_Budget_USD --> Actual_Budget_Variance__
     Actual_vs_Budget_Variance_USD --> Actual_Budget_Variance__
-    Sales_Budget_USD --> Landing_Budget_Variance__
+    Sales_Budget_USD --> Actual_Budget_Variance__
     Landing_vs_Budget_Variance_USD --> Landing_Budget_Variance__
+    Sales_Budget_USD --> Landing_Budget_Variance__
     Actual_Sales_USD --> Actual_Sales_Share__
     Estimated_Sales_Landing_USD --> Actual_Sales_Share__
-    Estimated_Sales_Landing_USD --> Open_Sales_Orders_Share__
     Open_Sales_Orders_USD --> Open_Sales_Orders_Share__
+    Estimated_Sales_Landing_USD --> Open_Sales_Orders_Share__
     Open_Opportunities_USD --> Open_Opportunities_Share__
     Estimated_Sales_Landing_USD --> Open_Opportunities_Share__
-    Sales_Budget_USD --> Landing_Performance_Status
     Landing_vs_Budget_Variance_USD --> Landing_Performance_Status
-    Sales_Budget_USD --> Landing_Performance_Colour
+    Sales_Budget_USD --> Landing_Performance_Status
     Landing_vs_Budget_Variance_USD --> Landing_Performance_Colour
+    Sales_Budget_USD --> Landing_Performance_Colour
     Landing_Budget_Achievement__ --> Landing_Achievement_Colour
-    sales_record_type -.-> Pipeline_Open_Sales_Orders_USD
     amount_usd -.-> Pipeline_Open_Sales_Orders_USD
-    sales_record_type -.-> Pipeline_Open_Opportunities_USD
+    sales_record_type -.-> Pipeline_Open_Sales_Orders_USD
     amount_usd -.-> Pipeline_Open_Opportunities_USD
+    sales_record_type -.-> Pipeline_Open_Opportunities_USD
     Pipeline_Open_Sales_Orders_USD --> Pipeline_Total_Open_USD
     Pipeline_Open_Opportunities_USD --> Pipeline_Total_Open_USD
-    sales_record_type -.-> Pipeline_Actual_Sales_USD
     amount_usd -.-> Pipeline_Actual_Sales_USD
+    sales_record_type -.-> Pipeline_Actual_Sales_USD
     Pipeline_Actual_Sales_USD --> Pipeline_Estimated_Landing_USD
     Pipeline_Total_Open_USD --> Pipeline_Estimated_Landing_USD
-    sales_record_type -.-> Open_Sales_Order_Count
     transaction_number -.-> Open_Sales_Order_Count
-    sales_record_type -.-> Open_Opportunity_Count
+    sales_record_type -.-> Open_Sales_Order_Count
     transaction_number -.-> Open_Opportunity_Count
+    sales_record_type -.-> Open_Opportunity_Count
     Open_Opportunity_Count --> Total_Open_Pipeline_Transaction_Count
     Open_Sales_Order_Count --> Total_Open_Pipeline_Transaction_Count
     transaction_number -.-> Pipeline_Transaction_Count
-    Open_Sales_Order_Count --> Average_Open_Sales_Order_Value_USD
     Pipeline_Open_Sales_Orders_USD --> Average_Open_Sales_Order_Value_USD
+    Open_Sales_Order_Count --> Average_Open_Sales_Order_Value_USD
     Open_Opportunity_Count --> Average_Open_Opportunity_Value_USD
     Pipeline_Open_Opportunities_USD --> Average_Open_Opportunity_Value_USD
     Total_Open_Pipeline_Transaction_Count --> Average_Open_Pipeline_Transaction_Value_USD
@@ -5848,16 +5939,16 @@ graph LR
     Pipeline_Total_Open_USD --> Pipeline_Open_Sales_Orders_Share__
     Pipeline_Total_Open_USD --> Pipeline_Open_Opportunities_Share__
     Pipeline_Open_Opportunities_USD --> Pipeline_Open_Opportunities_Share__
-    Actual_Sales_USD --> Sales_Composition_Value
-    Open_Opportunities_USD --> Sales_Composition_Value
-    Open_Sales_Orders_USD --> Sales_Composition_Value
-    Sales_Type -.-> Sales_Composition_Value
     Actual_Sales_USD --> HTML_Card_Actual_Sales
     Open_Sales_Orders_USD --> HTML_Card_Open_Sales_Orders
     Open_Opportunities_USD --> HTML_Card_Open_Opportunities
     Estimated_Sales_Landing_USD --> HTML_Card_Estimated_Sales_Landing
     Sales_Budget_USD --> HTML_Card_Sales_Budget
     Landing_vs_Budget_Variance_USD --> HTML_Card_Landing_vs_Budget_Variance
+    Open_Sales_Orders_USD --> Sales_Composition_Value
+    Open_Opportunities_USD --> Sales_Composition_Value
+    Actual_Sales_USD --> Sales_Composition_Value
+    Sales_Type -.-> Sales_Composition_Value
 </pre>
 <h4>Dependency Details</h4>
 <table>
@@ -5907,13 +5998,22 @@ graph LR
 
 
 <h2 id="sec-pages">8. Report Pages &amp; Visuals <a href="#sec-pages" class="section-anchor">#</a></h2>
-<h3 id="sec-page-1">8.1 Home <a href="#sec-page-1" class="section-anchor">#</a></h3>
+<h3 id="sec-page-1">8.1 Opportunities <a href="#sec-page-1" class="section-anchor">#</a></h3>
+<div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Opportunities"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g></svg>
+<div class="table-container">
+<table>
+<thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<h3 id="sec-page-2">8.2 Home <a href="#sec-page-2" class="section-anchor">#</a></h3>
 <div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Home"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g><g class="wf-bg" data-layer="backgrounds"><rect x="0" y="0" width="1280" height="592.2222222222222" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 1280×592 @ (0,0)</title></rect><text class="wf-num" x="6" y="18">1</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="16" y="592" width="208" height="80" rx="6"><title>card — 208×80 @ (16,592)</title></rect><text class="wf-num" x="22" y="610">2</text><text class="wf-label" x="22" y="628">card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="224" y="592" width="208" height="80" rx="6"><title>card — 208×80 @ (224,592)</title></rect><text class="wf-num" x="230" y="610">3</text><text class="wf-label" x="230" y="628">card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="432" y="592" width="208" height="80" rx="6"><title>card — 208×80 @ (432,592)</title></rect><text class="wf-num" x="438" y="610">4</text><text class="wf-label" x="438" y="628">card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="640" y="592" width="208" height="80" rx="6"><title>card — 208×80 @ (640,592)</title></rect><text class="wf-num" x="646" y="610">5</text><text class="wf-label" x="646" y="628">card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="848" y="592" width="208" height="80" rx="6"><title>card — 208×80 @ (848,592)</title></rect><text class="wf-num" x="854" y="610">6</text><text class="wf-label" x="854" y="628">card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="512" y="544" width="256" height="48" rx="6"><title>card — 256×48 @ (512,544)</title></rect><text class="wf-num" x="518" y="562">7</text><text class="wf-label" x="518" y="580">card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="672" width="1280" height="48" rx="6"><title>pageNavigator — 1280×48 @ (0,672)</title></rect><text class="wf-num" x="6" y="690">8</text><text class="wf-label" x="6" y="708">pageNavigator</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="10" y="10" width="96" height="352" rx="6"><title>slicer — 96×352 @ (10,10)</title></rect><text class="wf-num" x="16" y="28">9</text><text class="wf-label" x="16" y="46">Report …</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1056" y="592" width="208" height="80" rx="6"><title>card — 208×80 @ (1056,592)</title></rect><text class="wf-num" x="1062" y="610">10</text><text class="wf-label" x="1062" y="628">card</text></g></svg>
 <div class="table-container">
 <table>
 <thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>
 <tbody>
-<tr><td>1</td><td><strong>htmlContent443BE3AD55E043BF878BED274D3A6855</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>1280&times;592 @ 0,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Video_HTML_NetSuite_Overview</i></td></tr>
+<tr><td>1</td><td><strong>htmlContent443BE3AD55E043BF878BED274D3A6855</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>1280&times;592 @ 0,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
 <tr><td>2</td><td><strong>card</strong></td><td><code>card</code></td><td>208&times;80 @ 16,592<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>PDT</i></td></tr>
 <tr><td>3</td><td><strong>card</strong></td><td><code>card</code></td><td>208&times;80 @ 224,592<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>CST</i></td></tr>
 <tr><td>4</td><td><strong>card</strong></td><td><code>card</code></td><td>208&times;80 @ 432,592<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>EST</i></td></tr>
@@ -5926,7 +6026,16 @@ graph LR
 </tbody>
 </table>
 </div>
-<h3 id="sec-page-2">8.2 Glossary <a href="#sec-page-2" class="section-anchor">#</a></h3>
+<h3 id="sec-page-3">8.3 Reports <a href="#sec-page-3" class="section-anchor">#</a></h3>
+<div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Reports"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g></svg>
+<div class="table-container">
+<table>
+<thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>
+<tbody>
+</tbody>
+</table>
+</div>
+<h3 id="sec-page-4">8.4 Glossary <a href="#sec-page-4" class="section-anchor">#</a></h3>
 <div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Glossary"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g></svg>
 <div class="table-container">
 <table>
@@ -5935,39 +6044,39 @@ graph LR
 </tbody>
 </table>
 </div>
-<h3 id="sec-page-3">8.3 Overview <a href="#sec-page-3" class="section-anchor">#</a></h3>
-<div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Overview"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="2560" height="1440" rx="6"/></g><g class="wf-visual" data-layer="data-visuals"><rect x="2.8008609126517183" y="1.8522113526009325" width="2106.694249137206" height="428.56190169454726" rx="6"><title>tableEx — 2106×428 @ (2,1)</title></rect><text class="wf-num" x="8.800860912651718" y="19.852211352600932">1</text><text class="wf-label" x="8.800860912651718" y="37.85221135260093">Created Ticket</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="66" y="1238" width="92" height="72" rx="6"><title>image — 92×72 @ (66,1238)</title></rect><text class="wf-num" x="72" y="1256">2</text><text class="wf-label" x="72" y="1274">ResetBu…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (0,2)</title></rect><text class="wf-num" x="26" y="20.802030456852776">3</text><text class="wf-label" x="26" y="38.802030456852776">cardVisual</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="0" y="0" width="513.5162094763092" height="104.13965087281795" rx="6"><title>slicer — 513×104 @ (0,0)</title></rect><text class="wf-num" x="46" y="18">4</text><text class="wf-label" x="46" y="36">Fiscal Year</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="0" width="223.748031496063" height="995.7795275590552" rx="6"><title>pageNavigator — 223×995 @ (0,0)</title></rect><text class="wf-num" x="66" y="18">5</text><text class="wf-label" x="66" y="36">Page Navigator</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2.287823242843519" y="1.7822139036143476" width="2123.099969358786" height="703.0953047932704" rx="6"><title>tableEx — 2123×703 @ (2,1)</title></rect><text class="wf-num" x="88.28782324284352" y="19.78221390361435">6</text><text class="wf-label" x="88.28782324284352" y="37.78221390361435">CSAT Detail</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="312" y="82" width="2172" height="1282" rx="6"><title>shape — 2172×1282 @ (312,82)</title></rect><text class="wf-num" x="318" y="100">7</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="754.5719120135366" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (754,2)</title></rect><text class="wf-num" x="760.5719120135366" y="20.802030456852776">8</text><text class="wf-label" x="760.5719120135366" y="38.802030456852776">cardVisual</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="565.5860349127181" y="0" width="513.5162094763092" height="104.13965087281795" rx="6"><title>slicer — 513×104 @ (565,0)</title></rect><text class="wf-num" x="571.5860349127181" y="18">9</text><text class="wf-label" x="571.5860349127181" y="36">Month</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2.287823242843519" y="1.7822139036143476" width="2123.099969358786" height="703.0953047932704" rx="6"><title>tableEx — 2123×703 @ (2,1)</title></rect><text class="wf-num" x="108.28782324284352" y="19.78221390361435">10</text><text class="wf-label" x="108.28782324284352" y="37.78221390361435">Closed Tickets Detail</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="2324" y="108" width="128" height="162" rx="6"><title>shape — 128×162 @ (2324,108)</title></rect><text class="wf-num" x="2330" y="126">11</text><text class="wf-label" x="2330" y="144">XShapeOutl…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1131.8578680203047" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (1131,2)</title></rect><text class="wf-num" x="1137.8578680203047" y="20.802030456852776">12</text><text class="wf-label" x="1137.8578680203047" y="38.802030456852776">cardVisual</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="1128.4089775561097" y="0" width="514" height="105" rx="6"><title>slicer — 514×105 @ (1128,0)</title></rect><text class="wf-num" x="1134.4089775561097" y="18">13</text><text class="wf-label" x="1134.4089775561097" y="36">Business Unit</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1.8153731813793694" y="0" width="2123.986622213862" height="704.5296467544143" rx="6"><title>tableEx — 2123×704 @ (1,0)</title></rect><text class="wf-num" x="127.81537318137937" y="18">14</text><text class="wf-label" x="127.81537318137937" y="36">Created Tickets Detail</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="328" y="900" width="2128" height="458" rx="6"><title>tableEx — 2128×458 @ (328,900)</title></rect><text class="wf-num" x="334" y="918">15</text><text class="wf-label" x="334" y="936">TicketDetail</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1509.143824027073" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (1509,2)</title></rect><text class="wf-num" x="1515.143824027073" y="20.802030456852776">16</text><text class="wf-label" x="1515.143824027073" y="38.802030456852776">cardVisual</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="1684.4089775561097" y="0" width="514" height="105" rx="6"><title>slicer — 514×105 @ (1684,0)</title></rect><text class="wf-num" x="1690.4089775561097" y="18">17</text><text class="wf-label" x="1690.4089775561097" y="36">Customer</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="1.4325105961674436" width="2125.3877926016294" height="703.0953047932704" rx="6"><title>tableEx — 2125×703 @ (0,1)</title></rect><text class="wf-num" x="146" y="19.432510596167443">18</text><text class="wf-label" x="146" y="37.43251059616745">Open Tickets Detail</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1886.2335025380712" y="0" width="320" height="214" rx="6"><title>cardVisual — 320×214 @ (1886,0)</title></rect><text class="wf-num" x="1892.2335025380712" y="18">19</text><text class="wf-label" x="1892.2335025380712" y="36">cardVisual</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1.9998137303812245" y="1.974686837415612" width="2123.80218166486" height="1163.0905472377954" rx="6"><title>tableEx — 2123×1163 @ (1,1)</title></rect><text class="wf-num" x="167.99981373038122" y="19.97468683741561">20</text><text class="wf-label" x="167.99981373038122" y="37.97468683741561">Resolution SLA Not Met</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="377.28595600676823" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (377,2)</title></rect><text class="wf-num" x="383.28595600676823" y="20.802030456852776">21</text><text class="wf-label" x="383.28595600676823" y="38.802030456852776">cardVisual</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="3.517571936652065" y="1.7822108058783297" width="2118.1060364857362" height="1160.4979974052778" rx="6"><title>tableEx — 2118×1160 @ (3,1)</title></rect><text class="wf-num" x="9.517571936652065" y="19.78221080587833">22</text><text class="wf-label" x="9.517571936652065" y="37.78221080587833">Response SLA Not Met</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="76.62317728319263" y="251.48119723714504" width="225.9401381427475" height="102.16423637759017" rx="6"><title>image — 225×102 @ (76,251)</title></rect><text class="wf-num" x="82.62317728319263" y="269.481197237145">23</text><text class="wf-label" x="82.62317728319263" y="287.481197237145">PanelFilterButtonCl…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="328.1043745203377" y="186.64620107444358" width="2125.8019953952416" height="1165.065234075211" rx="6"><title>Unknown — 2125×1165 @ (328,186)</title></rect><text class="wf-num" x="334.1043745203377" y="204.64620107444358">24</text><text class="wf-label" x="334.1043745203377" y="222.64620107444358">Unknown</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="2.5766060891976195" width="2120.7317148300613" height="1160.513941148598" rx="6"><title>tableEx — 2120×1160 @ (0,2)</title></rect><text class="wf-num" x="186" y="20.576606089197618">25</text><text class="wf-label" x="186" y="38.57660608919762">Update SLA Not Met</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="298.88324873096445" y="250.5989847715736" width="2206.233502538071" height="215.0524534686971" rx="6"><title>Unknown — 2206×215 @ (298,250)</title></rect><text class="wf-num" x="304.88324873096445" y="268.5989847715736">26</text><text class="wf-label" x="304.88324873096445" y="286.5989847715736">Unknown</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="298.88324873096445" y="504.63620981387476" width="1635.1945854483924" height="415.83756345177665" rx="6"><title>lineChart — 1635×415 @ (298,504)</title></rect><text class="wf-num" x="304.88324873096445" y="522.6362098138748">27</text><text class="wf-label" x="304.88324873096445" y="540.6362098138748">Landing vs Budget</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1992.554991539763" y="504.63620981387476" width="508.9678510998308" height="415.83756345177665" rx="6"><title>donutChart — 508×415 @ (1992,504)</title></rect><text class="wf-num" x="1998.554991539763" y="522.6362098138748">28</text><text class="wf-label" x="1998.554991539763" y="540.6362098138748">Sales Composition</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="298" y="956" width="1076" height="446" rx="6"><title>clusteredBarChart — 1076×446 @ (298,956)</title></rect><text class="wf-num" x="304" y="974">29</text><text class="wf-label" x="304" y="992">Landing vs Budget by Business Unit</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1420" y="955" width="1085" height="446.25" rx="6"><title>pivotTable — 1085×446 @ (1420,955)</title></rect><text class="wf-num" x="1426" y="973">30</text><text class="wf-label" x="1426" y="991">pivotTable</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="298" y="0" width="794" height="66" rx="6"><title>shape — 794×66 @ (298,0)</title></rect><text class="wf-num" x="304" y="18">31</text><text class="wf-label" x="304" y="36">Header</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="298" y="46" width="794" height="66" rx="6"><title>shape — 794×66 @ (298,46)</title></rect><text class="wf-num" x="304" y="64">32</text><text class="wf-label" x="304" y="82">Header</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="2064.943476520819" y="5.149862873167464" width="40.78817733990148" height="86.89655172413794" rx="6"><title>shape — 40×86 @ (2064,5)</title></rect><text class="wf-num" x="2070.943476520819" y="23.149862873167464">33</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2158" y="28" width="342" height="62" rx="6"><title>card — 342×62 @ (2158,28)</title></rect><text class="wf-num" x="2164" y="46">34</text><text class="wf-label" x="2164" y="64">ProfileCard</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2092" y="0" width="98" height="118" rx="6"><title>image — 98×118 @ (2092,0)</title></rect><text class="wf-num" x="2098" y="18">35</text><text class="wf-label" x="2098" y="36">Profile…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="1332" width="224" height="94" rx="6"><title>card — 224×94 @ (0,1332)</title></rect><text class="wf-num" x="6" y="1350">36</text><text class="wf-label" x="6" y="1368">RefreshCard</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="216" width="224" height="996" rx="6"><title>Unknown — 224×996 @ (0,216)</title></rect><text class="wf-num" x="6" y="234">37</text><text class="wf-label" x="6" y="252">Unknown</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="0" y="120" width="224" height="66" rx="6"><title>shape — 224×66 @ (0,120)</title></rect><text class="wf-num" x="6" y="138">38</text><text class="wf-label" x="6" y="156">Header</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="296" y="254" width="338" height="212" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 338×212 @ (296,254)</title></rect><text class="wf-num" x="302" y="272">39</text><text class="wf-label" x="302" y="290">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="676" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (676,250)</title></rect><text class="wf-num" x="682" y="268">40</text><text class="wf-label" x="682" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1054" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (1054,250)</title></rect><text class="wf-num" x="1060" y="268">41</text><text class="wf-label" x="1060" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1430" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (1430,250)</title></rect><text class="wf-num" x="1436" y="268">42</text><text class="wf-label" x="1436" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1808" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (1808,250)</title></rect><text class="wf-num" x="1814" y="268">43</text><text class="wf-label" x="1814" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2186" y="260" width="314" height="204" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 314×204 @ (2186,260)</title></rect><text class="wf-num" x="2192" y="278">44</text><text class="wf-label" x="2192" y="296">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="297.6555931676189" y="126.03103042079658" width="2198.4089775561097" height="105" rx="6"><title>Unknown — 2198×105 @ (297,126)</title></rect><text class="wf-num" x="303.6555931676189" y="144.03103042079658">45</text><text class="wf-label" x="303.6555931676189" y="162.03103042079658">Unknown</text></g></svg>
+<h3 id="sec-page-5">8.5 Overview <a href="#sec-page-5" class="section-anchor">#</a></h3>
+<div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Overview"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="0" y="0" width="513.5162094763092" height="104.13965087281795" rx="6"><title>slicer — 513×104 @ (0,0)</title></rect><text class="wf-num" x="6" y="18">1</text><text class="wf-label" x="6" y="36">Fiscal Year</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="0" width="223.748031496063" height="995.7795275590552" rx="6"><title>pageNavigator — 223×995 @ (0,0)</title></rect><text class="wf-num" x="26" y="18">2</text><text class="wf-label" x="26" y="36">Page Navigator</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (0,2)</title></rect><text class="wf-num" x="46" y="20.802030456852776">3</text><text class="wf-label" x="46" y="38.802030456852776">cardVisual</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="2.8008609126517183" y="1.8522113526009325" width="2106.694249137206" height="428.56190169454726" rx="6"><title>tableEx — 2106×428 @ (2,1)</title></rect><text class="wf-num" x="68.80086091265171" y="19.852211352600932">4</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="66" y="1238" width="92" height="72" rx="6"><title>image — 92×72 @ (66,1238)</title></rect><text class="wf-num" x="72" y="1256">5</text><text class="wf-label" x="72" y="1274">ResetBu…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="754.5719120135366" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (754,2)</title></rect><text class="wf-num" x="760.5719120135366" y="20.802030456852776">6</text><text class="wf-label" x="760.5719120135366" y="38.802030456852776">cardVisual</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="312" y="82" width="2172" height="1282" rx="6"><title>shape — 2172×1282 @ (312,82)</title></rect><text class="wf-num" x="318" y="100">7</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="2.287823242843519" y="1.7822139036143476" width="2123.099969358786" height="703.0953047932704" rx="6"><title>tableEx — 2123×703 @ (2,1)</title></rect><text class="wf-num" x="88.28782324284352" y="19.78221390361435">8</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="565.5860349127181" y="0" width="513.5162094763092" height="104.13965087281795" rx="6"><title>slicer — 513×104 @ (565,0)</title></rect><text class="wf-num" x="571.5860349127181" y="18">9</text><text class="wf-label" x="571.5860349127181" y="36">Month</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="2324" y="108" width="128" height="162" rx="6"><title>shape — 128×162 @ (2324,108)</title></rect><text class="wf-num" x="2330" y="126">10</text><text class="wf-label" x="2330" y="144">XShapeOutl…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1131.8578680203047" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (1131,2)</title></rect><text class="wf-num" x="1137.8578680203047" y="20.802030456852776">11</text><text class="wf-label" x="1137.8578680203047" y="38.802030456852776">cardVisual</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="2.287823242843519" y="1.7822139036143476" width="2123.099969358786" height="703.0953047932704" rx="6"><title>tableEx — 2123×703 @ (2,1)</title></rect><text class="wf-num" x="108.28782324284352" y="19.78221390361435">12</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="1128.4089775561097" y="0" width="514" height="105" rx="6"><title>slicer — 514×105 @ (1128,0)</title></rect><text class="wf-num" x="1134.4089775561097" y="18">13</text><text class="wf-label" x="1134.4089775561097" y="36">Business Unit</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="328" y="900" width="2128" height="458" rx="6"><title>tableEx — 2128×458 @ (328,900)</title></rect><text class="wf-num" x="334" y="918">14</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="1.8153731813793694" y="0" width="2123.986622213862" height="704.5296467544143" rx="6"><title>tableEx — 2123×704 @ (1,0)</title></rect><text class="wf-num" x="127.81537318137937" y="18">15</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="1684.4089775561097" y="0" width="514" height="105" rx="6"><title>slicer — 514×105 @ (1684,0)</title></rect><text class="wf-num" x="1690.4089775561097" y="18">16</text><text class="wf-label" x="1690.4089775561097" y="36">Customer</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1509.143824027073" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (1509,2)</title></rect><text class="wf-num" x="1515.143824027073" y="20.802030456852776">17</text><text class="wf-label" x="1515.143824027073" y="38.802030456852776">cardVisual</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1886.2335025380712" y="0" width="320" height="214" rx="6"><title>cardVisual — 320×214 @ (1886,0)</title></rect><text class="wf-num" x="1892.2335025380712" y="18">18</text><text class="wf-label" x="1892.2335025380712" y="36">cardVisual</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="0" y="1.4325105961674436" width="2125.3877926016294" height="703.0953047932704" rx="6"><title>tableEx — 2125×703 @ (0,1)</title></rect><text class="wf-num" x="146" y="19.432510596167443">19</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="377.28595600676823" y="2.8020304568527763" width="335.7021996615905" height="212.25042301184433" rx="6"><title>cardVisual — 335×212 @ (377,2)</title></rect><text class="wf-num" x="383.28595600676823" y="20.802030456852776">20</text><text class="wf-label" x="383.28595600676823" y="38.802030456852776">cardVisual</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="1.9998137303812245" y="1.974686837415612" width="2123.80218166486" height="1163.0905472377954" rx="6"><title>tableEx — 2123×1163 @ (1,1)</title></rect><text class="wf-num" x="167.99981373038122" y="19.97468683741561">21</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="76.62317728319263" y="251.48119723714504" width="225.9401381427475" height="102.16423637759017" rx="6"><title>image — 225×102 @ (76,251)</title></rect><text class="wf-num" x="82.62317728319263" y="269.481197237145">22</text><text class="wf-label" x="82.62317728319263" y="287.481197237145">PanelFilterButtonCl…</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="3.517571936652065" y="1.7822108058783297" width="2118.1060364857362" height="1160.4979974052778" rx="6"><title>tableEx — 2118×1160 @ (3,1)</title></rect><text class="wf-num" x="9.517571936652065" y="19.78221080587833">23</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="0" y="2.5766060891976195" width="2120.7317148300613" height="1160.513941148598" rx="6"><title>tableEx — 2120×1160 @ (0,2)</title></rect><text class="wf-num" x="186" y="20.576606089197618">24</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="328.10437452033773" y="186.64620107444358" width="2125.8019953952416" height="1165.065234075211" rx="6"><title>Unknown — 2125×1165 @ (328,186)</title></rect><text class="wf-num" x="334.10437452033773" y="204.64620107444358">25</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="298.88324873096445" y="250.5989847715736" width="2206.233502538071" height="215.0524534686971" rx="6"><title>Unknown — 2206×215 @ (298,250)</title></rect><text class="wf-num" x="304.88324873096445" y="268.5989847715736">26</text><text class="wf-label" x="304.88324873096445" y="286.5989847715736">Unknown</text></g><g class="wf-bg" data-layer="backgrounds"><rect x="298.88324873096445" y="504.63620981387476" width="1635.1945854483924" height="415.83756345177665" rx="6"><title>lineChart — 1635×415 @ (298,504)</title></rect><text class="wf-num" x="304.88324873096445" y="522.6362098138748">27</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1992.554991539763" y="504.63620981387476" width="508.9678510998308" height="415.83756345177665" rx="6"><title>donutChart — 508×415 @ (1992,504)</title></rect><text class="wf-num" x="1998.554991539763" y="522.6362098138748">28</text><text class="wf-label" x="1998.554991539763" y="540.6362098138748">Sales Composition</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="298" y="956" width="1076" height="446" rx="6"><title>clusteredBarChart — 1076×446 @ (298,956)</title></rect><text class="wf-num" x="304" y="974">29</text><text class="wf-label" x="304" y="992">Landing vs Budget by Business Unit</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1420" y="955" width="1085" height="446.25" rx="6"><title>pivotTable — 1085×446 @ (1420,955)</title></rect><text class="wf-num" x="1426" y="973">30</text><text class="wf-label" x="1426" y="991">pivotTable</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="298" y="0" width="794" height="66" rx="6"><title>shape — 794×66 @ (298,0)</title></rect><text class="wf-num" x="304" y="18">31</text><text class="wf-label" x="304" y="36">Header</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="298" y="46" width="794" height="66" rx="6"><title>shape — 794×66 @ (298,46)</title></rect><text class="wf-num" x="304" y="64">32</text><text class="wf-label" x="304" y="82">Header</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="2064.943476520819" y="5.149862873167464" width="40.78817733990148" height="86.89655172413794" rx="6"><title>shape — 40×86 @ (2064,5)</title></rect><text class="wf-num" x="2070.943476520819" y="23.149862873167464">33</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2158" y="28" width="342" height="62" rx="6"><title>card — 342×62 @ (2158,28)</title></rect><text class="wf-num" x="2164" y="46">34</text><text class="wf-label" x="2164" y="64">ProfileCard</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2092" y="0" width="98" height="118" rx="6"><title>image — 98×118 @ (2092,0)</title></rect><text class="wf-num" x="2098" y="18">35</text><text class="wf-label" x="2098" y="36">Profile…</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="1332" width="224" height="94" rx="6"><title>card — 224×94 @ (0,1332)</title></rect><text class="wf-num" x="6" y="1350">36</text><text class="wf-label" x="6" y="1368">RefreshCard</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="0" y="216" width="224" height="996" rx="6"><title>Unknown — 224×996 @ (0,216)</title></rect><text class="wf-num" x="6" y="234">37</text><text class="wf-label" x="6" y="252">Unknown</text></g><g class="wf-ctrl" data-layer="ui-controls"><rect x="0" y="120" width="224" height="66" rx="6"><title>shape — 224×66 @ (0,120)</title></rect><text class="wf-num" x="6" y="138">38</text><text class="wf-label" x="6" y="156">Header</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="296" y="254" width="338" height="212" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 338×212 @ (296,254)</title></rect><text class="wf-num" x="302" y="272">39</text><text class="wf-label" x="302" y="290">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="676" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (676,250)</title></rect><text class="wf-num" x="682" y="268">40</text><text class="wf-label" x="682" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1054" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (1054,250)</title></rect><text class="wf-num" x="1060" y="268">41</text><text class="wf-label" x="1060" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1430" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (1430,250)</title></rect><text class="wf-num" x="1436" y="268">42</text><text class="wf-label" x="1436" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="1808" y="250" width="336" height="216" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 336×216 @ (1808,250)</title></rect><text class="wf-num" x="1814" y="268">43</text><text class="wf-label" x="1814" y="286">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="2186" y="260" width="314" height="204" rx="6"><title>htmlContent443BE3AD55E043BF878BED274D3A6855 — 314×204 @ (2186,260)</title></rect><text class="wf-num" x="2192" y="278">44</text><text class="wf-label" x="2192" y="296">Temperature Card</text></g><g class="wf-visual" data-layer="data-visuals"><rect x="297.6555931676189" y="126.03103042079658" width="2198.4089775561097" height="105" rx="6"><title>Unknown — 2198×105 @ (297,126)</title></rect><text class="wf-num" x="303.6555931676189" y="144.03103042079658">45</text><text class="wf-label" x="303.6555931676189" y="162.03103042079658">Unknown</text></g></svg>
 <div class="table-container">
 <table>
 <thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>
 <tbody>
-<tr><td>1</td><td><strong>Created Ticket</strong></td><td><code>tableEx</code></td><td>2106&times;428 @ 2,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> ticket_number, date_logged, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type, customer_name, date_closed</td></tr>
-<tr><td>2</td><td><strong>ResetButton</strong></td><td><code>image</code></td><td>92&times;72 @ 66,1238<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>3</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 0,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Actual Sales USD</i></td></tr>
-<tr><td>4</td><td><strong>Fiscal Year</strong></td><td><code>slicer</code></td><td>513&times;104 @ 0,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> fiscal_year</td></tr>
-<tr><td>5</td><td><strong>Page Navigator</strong></td><td><code>pageNavigator</code></td><td>223&times;995 @ 0,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>6</td><td><strong>CSAT Detail</strong></td><td><code>tableEx</code></td><td>2123&times;703 @ 2,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> ticket_number, date_logged, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type, <i>SatisfactionLevel</i>, customer_name, date_closed</td></tr>
+<tr><td>1</td><td><strong>Fiscal Year</strong></td><td><code>slicer</code></td><td>513&times;104 @ 0,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> fiscal_year</td></tr>
+<tr><td>2</td><td><strong>Page Navigator</strong></td><td><code>pageNavigator</code></td><td>223&times;995 @ 0,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>3</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 0,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>4</td><td><strong>Created Ticket</strong></td><td><code>tableEx</code></td><td>2106&times;428 @ 2,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> customer_name, ticket_number, date_logged, date_closed, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type</td></tr>
+<tr><td>5</td><td><strong>ResetButton</strong></td><td><code>image</code></td><td>92&times;72 @ 66,1238<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 0</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>6</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 754,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
 <tr><td>7</td><td><strong>Blur Rectangle</strong></td><td><code>shape</code></td><td>2172&times;1282 @ 312,82<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>8</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 754,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Open Opportunities USD</i></td></tr>
+<tr><td>8</td><td><strong>CSAT Detail</strong></td><td><code>tableEx</code></td><td>2123&times;703 @ 2,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> customer_name, ticket_number, <i>SatisfactionLevel</i>, date_logged, date_closed, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type</td></tr>
 <tr><td>9</td><td><strong>Month</strong></td><td><code>slicer</code></td><td>513&times;104 @ 565,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 1000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Month Name</td></tr>
-<tr><td>10</td><td><strong>Closed Tickets Detail</strong></td><td><code>tableEx</code></td><td>2123&times;703 @ 2,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> ticket_number, date_logged, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type, customer_name, Technician, vendor, category, <i>Closed Tickets Visual</i>, date_closed</td></tr>
-<tr><td>11</td><td><strong>XShapeOutline</strong></td><td><code>shape</code></td><td>128&times;162 @ 2324,108<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>12</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 1131,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Estimated Sales Landing USD</i></td></tr>
+<tr><td>10</td><td><strong>XShapeOutline</strong></td><td><code>shape</code></td><td>128&times;162 @ 2324,108<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>11</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 1131,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>12</td><td><strong>Closed Tickets Detail</strong></td><td><code>tableEx</code></td><td>2123&times;703 @ 2,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> customer_name, ticket_number, date_logged, date_closed, user, Technician, vendor, vendor_product, vendor_issue, sladesc, ticket_summary, category, priority_description, thirdpartyreference, ticket_type, <i>Closed Tickets Visual</i></td></tr>
 <tr><td>13</td><td><strong>Business Unit</strong></td><td><code>slicer</code></td><td>514&times;105 @ 1128,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 2000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Business Unit</td></tr>
-<tr><td>14</td><td><strong>Created Tickets Detail</strong></td><td><code>tableEx</code></td><td>2123&times;704 @ 1,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> ticket_number, date_logged, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type, customer_name</td></tr>
-<tr><td>15</td><td><strong>TicketDetail</strong></td><td><code>tableEx</code></td><td>2128&times;458 @ 328,900<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> action_time, technician, action_outcome, action_description, Hours Time Formatted, State, ticket_type, SLAType, Cat, ticket_summary</td></tr>
-<tr><td>16</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 1509,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Sales Budget USD</i></td></tr>
-<tr><td>17</td><td><strong>Customer</strong></td><td><code>slicer</code></td><td>514&times;105 @ 1684,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Customer</td></tr>
-<tr><td>18</td><td><strong>Open Tickets Detail</strong></td><td><code>tableEx</code></td><td>2125&times;703 @ 0,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 4000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> ticket_number, date_logged, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type, customer_name, status, vendor, category, Technician</td></tr>
-<tr><td>19</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>320&times;214 @ 1886,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 4000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Landing vs Budget Variance USD</i></td></tr>
-<tr><td>20</td><td><strong>Resolution SLA Not Met</strong></td><td><code>tableEx</code></td><td>2123&times;1163 @ 1,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 5000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Ticket ID, customer_name, action_date, Cat, technician, State, SLAType, ticket_type, <i>Action Date Context</i>, actionid</td></tr>
-<tr><td>21</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 377,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 5000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Open Sales Orders USD</i></td></tr>
-<tr><td>22</td><td><strong>Response SLA Not Met</strong></td><td><code>tableEx</code></td><td>2118&times;1160 @ 3,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 6000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Cat, customer_name, SLAType, State, technician, Ticket ID, ticket_type, action_date, <i>Action Date Context</i>, actionid</td></tr>
-<tr><td>23</td><td><strong>PanelFilterButtonClose</strong></td><td><code>image</code></td><td>225&times;102 @ 76,251<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 6000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>24</td><td><strong>Unknown</strong></td><td><code>Unknown</code></td><td>2125&times;1165 @ 328,186<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 7000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>25</td><td><strong>Update SLA Not Met</strong></td><td><code>tableEx</code></td><td>2120&times;1160 @ 0,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 7000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Ticket ID, customer_name, action_date, Cat, technician, State, SLAType, ticket_type, <i>Action Date Context</i>, actionid</td></tr>
+<tr><td>14</td><td><strong>TicketDetail</strong></td><td><code>tableEx</code></td><td>2128&times;458 @ 328,900<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> action_time, technician, action_outcome, Hours Time Formatted, SLAType, State, Cat, ticket_summary, action_description, ticket_type</td></tr>
+<tr><td>15</td><td><strong>Created Tickets Detail</strong></td><td><code>tableEx</code></td><td>2123&times;704 @ 1,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> customer_name, ticket_number, date_logged, user, vendor_product, vendor_issue, sladesc, ticket_summary, priority_description, thirdpartyreference, ticket_type</td></tr>
+<tr><td>16</td><td><strong>Customer</strong></td><td><code>slicer</code></td><td>514&times;105 @ 1684,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Customer</td></tr>
+<tr><td>17</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 1509,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 3000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>18</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>320&times;214 @ 1886,0<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 4000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>19</td><td><strong>Open Tickets Detail</strong></td><td><code>tableEx</code></td><td>2125&times;703 @ 0,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 4000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> customer_name, ticket_number, date_logged, status, user, Technician, vendor, vendor_product, vendor_issue, sladesc, ticket_summary, category, priority_description, thirdpartyreference, ticket_type</td></tr>
+<tr><td>20</td><td><strong>cardVisual</strong></td><td><code>cardVisual</code></td><td>335&times;212 @ 377,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 5000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>21</td><td><strong>Resolution SLA Not Met</strong></td><td><code>tableEx</code></td><td>2123&times;1163 @ 1,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 5000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Ticket ID, customer_name, action_date, Cat, technician, State, SLAType, ticket_type, <i>Action Date Context</i>, actionid</td></tr>
+<tr><td>22</td><td><strong>PanelFilterButtonClose</strong></td><td><code>image</code></td><td>225&times;102 @ 76,251<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 6000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>23</td><td><strong>Response SLA Not Met</strong></td><td><code>tableEx</code></td><td>2118&times;1160 @ 3,1<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 6000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Ticket ID, customer_name, action_date, Cat, technician, State, SLAType, ticket_type, <i>Action Date Context</i>, actionid</td></tr>
+<tr><td>24</td><td><strong>Update SLA Not Met</strong></td><td><code>tableEx</code></td><td>2120&times;1160 @ 0,2<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 7000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> Ticket ID, customer_name, action_date, Cat, technician, State, SLAType, ticket_type, <i>Action Date Context</i>, actionid</td></tr>
+<tr><td>25</td><td><strong>Unknown</strong></td><td><code>Unknown</code></td><td>2125&times;1165 @ 328,186<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 7000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
 <tr><td>26</td><td><strong>Unknown</strong></td><td><code>Unknown</code></td><td>2206&times;215 @ 298,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 8000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>27</td><td><strong>Landing vs Budget</strong></td><td><code>lineChart</code></td><td>1635&times;415 @ 298,504<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 9000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Y-axis:</span> <i>Estimated Sales Landing USD</i><br><span style='color:var(--fg-muted);font-size:12px;'>X-axis:</span> Month Year</td></tr>
+<tr><td>27</td><td><strong>Landing vs Budget</strong></td><td><code>lineChart</code></td><td>1635&times;415 @ 298,504<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 9000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>X-axis:</span> Month Year<br><span style='color:var(--fg-muted);font-size:12px;'>Y-axis:</span> <i>Estimated Sales Landing USD</i></td></tr>
 <tr><td>28</td><td><strong>Sales Composition</strong></td><td><code>donutChart</code></td><td>508&times;415 @ 1992,504<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 10000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>X-axis:</span> Sales Type<br><span style='color:var(--fg-muted);font-size:12px;'>Y-axis:</span> Sales Composition Value</td></tr>
 <tr><td>29</td><td><strong>Landing vs Budget by Business Unit</strong></td><td><code>clusteredBarChart</code></td><td>1076&times;446 @ 298,956<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 11000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>X-axis:</span> Business Unit<br><span style='color:var(--fg-muted);font-size:12px;'>Y-axis:</span> <i>Estimated Sales Landing USD</i>, <i>Sales Budget USD</i></td></tr>
 <tr><td>30</td><td><strong>pivotTable</strong></td><td><code>pivotTable</code></td><td>1085&times;446 @ 1420,955<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 12000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Actual Sales USD</i>, <i>Open Sales Orders USD</i>, <i>Open Opportunities USD</i>, <i>Estimated Sales Landing USD</i>, <i>Sales Budget USD</i>, <i>Landing Budget Achievement %</i><br><span style='color:var(--fg-muted);font-size:12px;'>Rows:</span> Business Unit</td></tr>
@@ -5979,36 +6088,18 @@ graph LR
 <tr><td>36</td><td><strong>RefreshCard</strong></td><td><code>card</code></td><td>224&times;94 @ 0,1332<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 18000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>Date Last Refreshed</i></td></tr>
 <tr><td>37</td><td><strong>Unknown</strong></td><td><code>Unknown</code></td><td>224&times;996 @ 0,216<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 19000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
 <tr><td>38</td><td><strong>Header</strong></td><td><code>shape</code></td><td>224&times;66 @ 0,120<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 20000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
-<tr><td>39</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>338&times;212 @ 296,254<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 21000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>HTML Card Actual Sales</i></td></tr>
-<tr><td>40</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 676,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 22000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>HTML Card Open Sales Orders</i></td></tr>
-<tr><td>41</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 1054,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 23000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>HTML Card Open Opportunities</i></td></tr>
-<tr><td>42</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 1430,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 24000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>HTML Card Estimated Sales Landing</i></td></tr>
-<tr><td>43</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 1808,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 25000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>HTML Card Sales Budget</i></td></tr>
-<tr><td>44</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>314&times;204 @ 2186,260<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 26000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>Value:</span> <i>HTML Card Landing vs Budget Variance</i></td></tr>
+<tr><td>39</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>338&times;212 @ 296,254<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 21000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>40</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 676,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 22000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>41</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 1054,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 23000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>42</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 1430,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 24000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>43</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>336&times;216 @ 1808,250<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 25000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
+<tr><td>44</td><td><strong>Temperature Card</strong></td><td><code>htmlContent443BE3AD55E043BF878BED274D3A6855</code></td><td>314&times;204 @ 2186,260<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 26000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
 <tr><td>45</td><td><strong>Unknown</strong></td><td><code>Unknown</code></td><td>2198&times;105 @ 297,126<br><span style='color:var(--fg-muted);font-size:12px;'>Z: 27000</span></td><td>Yes</td><td><span style='color:var(--fg-muted);font-size:12px;'>--</span></td></tr>
 </tbody>
 </table>
 </div>
-<h3 id="sec-page-4">8.4 Sales Orders <a href="#sec-page-4" class="section-anchor">#</a></h3>
+<h3 id="sec-page-6">8.6 Sales Orders <a href="#sec-page-6" class="section-anchor">#</a></h3>
 <div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Sales Orders"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g></svg>
-<div class="table-container">
-<table>
-<thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>
-<tbody>
-</tbody>
-</table>
-</div>
-<h3 id="sec-page-5">8.5 Opportunities <a href="#sec-page-5" class="section-anchor">#</a></h3>
-<div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Opportunities"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g></svg>
-<div class="table-container">
-<table>
-<thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>
-<tbody>
-</tbody>
-</table>
-</div>
-<h3 id="sec-page-6">8.6 Reports <a href="#sec-page-6" class="section-anchor">#</a></h3>
-<div class="layer-controls"><label><input type="checkbox" class="layer-toggle" data-target="backgrounds" checked> Backgrounds</label><label><input type="checkbox" class="layer-toggle" data-target="ui-controls" checked> UI Controls</label><label><input type="checkbox" class="layer-toggle" data-target="data-visuals" checked> Data Visuals</label></div><svg class="page-wf" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Layout preview of Reports"><g data-layer="backgrounds"><rect class="wf-canvas" x="0" y="0" width="1280" height="720" rx="6"/></g></svg>
 <div class="table-container">
 <table>
 <thead><tr><th>#</th><th>Visual</th><th>Type</th><th>Geometry</th><th>Visible</th><th>Data Fields</th></tr></thead>

@@ -4,6 +4,19 @@ This project demonstrates a complete local ETL pipeline built with **Python, Pol
 
 The goal is to take NetSuite-style CSV extracts, validate and transform them, preserve important history, load a current-state warehouse, and expose simple reporting views for Power BI.
 
+
+## Project documentation
+
+Review the project documentation before beginning development. The recommended order is:
+
+1. **HTML data documentation — review first**  
+   [`Netsuite_Project_Data_Documentation.html`](Netsuite_Project_Data_Documentation.html) provides the initial understanding of the source data, table structures, fields, relationships and dependencies. This should be reviewed before the project starts so the data model and source limitations are understood before ETL and report development begins.
+
+2. **Word report specification — review after the data documentation**  
+   [`Sales_Performance_Pipeline_Report_Specification.docx`](Sales_Performance_Pipeline_Report_Specification(1).docx) defines the report scope, business requirements, core measures, reporting logic, semantic model, page layouts, filters and expected controls.
+
+The HTML file explains **what data is available and how it relates**. The Word specification explains **what the final reporting solution must deliver**.
+
 ## High-level architecture
 
 ```text
@@ -893,3 +906,22 @@ The final design provides:
 - Incremental transaction processing
 - USD-normalised business reporting
 - Power BI-ready sales and budget views
+
+---
+
+# Power BI report end result
+
+The ETL and reporting layers support a Power BI solution containing a report landing page and a sales performance overview. The screenshots below show the completed report design produced from the reporting-ready business views.
+
+## Report home page
+
+The home page provides report navigation, refresh information and a clear entry point into the reporting solution.
+
+![Power BI report home page](img/Report%20Home%20Page.png)
+
+## Sales performance overview
+
+The overview page presents fiscal filters, headline sales KPIs, monthly landing versus budget, sales composition, business-unit performance and a detailed summary matrix.
+
+![Power BI sales performance overview](img/Report%20Overview.png)
+

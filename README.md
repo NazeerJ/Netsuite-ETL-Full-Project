@@ -7,15 +7,15 @@ The goal is to take NetSuite-style CSV extracts, validate and transform them, pr
 
 ## Project documentation
 
-Review the project documentation before beginning development. The recommended order is:
+The project includes two supporting documents, used at different stages:
 
-1. **HTML data documentation — review first**  
-   [`Netsuite_Project_Data_Documentation.html`](Netsuite_Project_Data_Documentation.html) provides the initial understanding of the source data, table structures, fields, relationships and dependencies. This should be reviewed before the project starts so the data model and source limitations are understood before ETL and report development begins.
+1. **Project specification — review before development begins**  
+   [`Sales_Performance_Pipeline_Report_Specification.docx`](Sales_Performance_Pipeline_Report_Specification.docx) defines the project scope, reporting requirements, source structures, relationships, business logic, semantic-model design, report pages, filters and expected controls. This document establishes what must be built before ETL and Power BI development starts.
 
-2. **Word report specification — review after the data documentation**  
-   [`Sales_Performance_Pipeline_Report_Specification.docx`](Sales_Performance_Pipeline_Report_Specification.docx) defines the report scope, business requirements, core measures, reporting logic, semantic model, page layouts, filters and expected controls.
+2. **Power BI report documentation — review after the report is developed**  
+   [`Netsuite_Project_Data_Documentation.html`](Netsuite_Project_Data_Documentation.html) documents the completed Power BI solution, including the semantic model, tables, columns, measures, relationships and report structure. It is intended for technical reference, handover and ongoing maintenance after the report has been built.
 
-The HTML file explains **what data is available and how it relates**. The Word specification explains **what the final reporting solution must deliver**.
+The Word specification defines **what the project should deliver**. The HTML documentation records **what was implemented in Power BI**.
 
 ## High-level architecture
 

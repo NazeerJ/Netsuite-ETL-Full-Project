@@ -10,9 +10,6 @@ The script performs the following stages in sequence:
 6. Enforces the data-quality gate.
 7. Loads SCD history tables and current-state DWH tables.
 
-The existing processing logic and execution order have been retained. This
-version only reorganises the code, standardises formatting, and documents each
-section more clearly.
 """
 
 # %%
@@ -986,8 +983,6 @@ def run_scd_loads(
 # ==============================================================================
 # PIPELINE EXECUTION: RAW INGESTION
 # ==============================================================================
-# Existing processing logic is retained. The local aliases below preserve the
-# original variable names used throughout the ingestion block.
 
 directory_path = DIRECTORY_PATH
 raw_tables = RAW_TABLES
@@ -1024,9 +1019,7 @@ with engine.begin() as connection:
     )
 
 
-# Optional dictionary for inspecting DataFrames while developing.
 dataframes = {}
-
 
 # ------------------------------------------------------------------
 # LOAD RAW FILES
@@ -1052,9 +1045,6 @@ try:
             try_parse_dates=True,
             separator=";",
         )
-
-        # Store the number of physical rows in the original file.
-        # For FX, the loaded count may be higher after unpivoting.
         source_row_count = df.height
 
 
@@ -1241,7 +1231,6 @@ except Exception as error:
 
     print(f"Pipeline failed: {error}")
 
-    # Raise the error again so Python does not hide the failure.
     raise
 
 # %%
@@ -1441,5 +1430,4 @@ except Exception as error:
 
     print(f"Pipeline failed: {error}")
 
-    # Raise again so the failure is not hidden.
     raise

@@ -13,7 +13,7 @@ The project includes two supporting documents, used at different stages:
    [`Sales_Performance_Pipeline_Report_Specification.docx`](Sales_Performance_Pipeline_Report_Specification.docx) defines the project scope, reporting requirements, source structures, relationships, business logic, semantic-model design, report pages, filters and expected controls. This document establishes what must be built before ETL and Power BI development starts.
 
 2. **Power BI report documentation — review after the report is developed**  
-   [`Netsuite_Project_Data_Documentation.html`](Netsuite_Project_Data_Documentation.html) documents the completed Power BI solution, including the semantic model, tables, columns, measures, relationships and report structure. It is intended for technical reference, handover and ongoing maintenance after the report has been built.
+   [`Netsuite_Project_PowerBI_Data_Documentation.html`](Netsuite_Project_PowerBI_Data_Documentation.html) documents the completed Power BI solution, including the semantic model, tables, columns, measures, relationships and report structure. It is intended for technical reference, handover and ongoing maintenance after the report has been built.
 
 The Word specification defines **what the project should deliver**. The HTML documentation records **what was implemented in Power BI**.
 

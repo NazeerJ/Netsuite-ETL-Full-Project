@@ -52,7 +52,7 @@ Run the project files in this order when setting up the database:
 6. incrementalloadschema.sql
 7. incrementalloadsp.sql
 8. busviews.sql
-9. Pipeline_cleaned.py
+9. Pipeline_Trigger.py
 ```
 
 The SQL files create the database objects. The Python file runs the recurring ETL process.
